@@ -3,10 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { ListaAnkietComponent } from './lista-ankiet/lista-ankiet.component';
+import { RejestracjaComponent } from './rejestracja/rejestracja.component';
+import { DodanieAnkietyComponent } from './dodanie-ankiety/dodanie-ankiety.component';
+import { MenuComponent } from './menu/menu.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    ListaAnkietComponent,
+    RejestracjaComponent,
+    DodanieAnkietyComponent,
+    MenuComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
