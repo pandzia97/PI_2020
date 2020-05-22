@@ -1,0 +1,13 @@
+<div id="panel_logowania">
+  <span [hidden]="hideFlag">Niepoprawne dane logowania</span>
+  <form>
+    <label for="username">Podaj swoj login:</label>
+    <input type="text" id="username" name="username" >
+    <label for="password">Podaj haslo:</label>
+    <input type="password" id="password" name="password">
+    <div id="lower">
+      <input type="checkbox"><label class="check" for="checkbox">Zapamiętaj mnie!</label>
+      <input type="submit" value="Login" (click)="verifyLoginData()">
+    </div>
+  </form>
+</div>
