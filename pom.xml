@@ -59,7 +59,7 @@
                 <configuration>
                     <nodeVersion>v12.13.1</nodeVersion>
                     <npmVersion>6.12.1</npmVersion>
-                    <workingDirectory>src/main/angular/signMeUpApp</workingDirectory>
+                    <workingDirectory>src/main/angular/votr-front</workingDirectory>
                 </configuration>
                 <executions>
                     <execution>
