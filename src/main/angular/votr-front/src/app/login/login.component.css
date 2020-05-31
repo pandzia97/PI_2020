@@ -59,7 +59,7 @@ input[type="submit"] {
   text-shadow: 0 0 1px #ffffff;
   background: rgba(255, 255, 255, 0);
   position: relative;
-  left: 180px;
+
 }
 
 #panel_logowania, input[type="submit"] {
