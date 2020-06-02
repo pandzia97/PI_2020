@@ -4,10 +4,69 @@
   <meta charset="utf-8">
   <title>Aplikacja do ankiet</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 </head>
-<body bgcolor="gray">
+<body>
+<div class="wrapper">
+  <div class="header">
+
+    <div class="logo">
+      <img src="favicon.ico" style="float: left;"/>
+      <span style="color: #ffffff">Aplikacja do ankiet :)</span>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+  <div class="nav">
+    <ol>
+      <li><a href="#">Strona główna</a></li>
+      <li><a href="#">Ankiety</a>
+        <ul>
+          <li><a href="#">Dodaj ankietę</a></li>
+          <li><a href="#">Sprawdź listę dostępnych ankiet</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Odpowiedzi</a>
+        <ul>
+          <li><a href="#">Pokaż statystyki odpowiedzi</a></li>
+          <li><a href="#">Sprawdź swoje odpowiedzi</a></li>
+        </ul>
+      </li>
+      <li><a href="#">O autorach</a></li>
+    </ol>
+
+  </div>
+
   <app-root></app-root>
+
+  <div class="footer">No taka tam aplikacja bebebee.. XD
+  </div>
+</div>
+
+<script src="jquery-1.11.3.min.js"></script>
+
+<script>
+
+  $(document).ready(function () {
+    var NavY = $('.nav').offset().top;
+
+    var stickyNav = function () {
+      var ScrollY = $(window).scrollTop();
+
+      if (ScrollY > NavY) {
+        $('.nav').addClass('sticky');
+      } else {
+        $('.nav').removeClass('sticky');
+      }
+    };
+
+    stickyNav();
+
+    $(window).scroll(function () {
+      stickyNav();
+    });
+  });
+
+</script>
+
 <body/>
 </html>

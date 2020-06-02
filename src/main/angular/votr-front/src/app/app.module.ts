@@ -9,6 +9,7 @@ import { RejestracjaComponent } from './rejestracja/rejestracja.component';
 import { DodanieAnkietyComponent } from './dodanie-ankiety/dodanie-ankiety.component';
 import { MenuComponent } from './menu/menu.component';
 import { TestComponent } from './test/test.component';
+import { HelloComponent } from './hello/hello.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TestComponent } from './test/test.component';
     RejestracjaComponent,
     DodanieAnkietyComponent,
     MenuComponent,
-    TestComponent
+    TestComponent,
+    HelloComponent
   ],
   imports: [
     BrowserModule,
