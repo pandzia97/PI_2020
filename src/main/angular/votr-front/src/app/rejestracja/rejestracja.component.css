@@ -1,0 +1,65 @@
+#rejestracja {
+  width: 400px;
+  margin: 0 auto;
+  padding: 15px 0 0;
+  background-color: rgba(255, 255, 255, 0.57);
+  border: 2px solid #000000;
+  font: 16px calibri;
+  letter-spacing: -1px;
+}
+
+form {
+  margin: 0;
+}
+
+label {
+  display: block;
+  width: 260px;
+  padding: 10px 20px;
+  color: #000000;
+  font-size: 16px;
+}
+
+#username, #password, #confirm-password, #email {
+  display: block;
+  width: 360px;
+  margin: 0 auto;
+  padding: 10px 5px;
+  border: 2px solid #000000;
+  outline: 5px solid #ffffff;
+  font-size: 22px;
+}
+
+#username:focus, #password:focus, #confirm-password:focus, #email:focus {
+  outline: 5px solid rgba(0, 102, 255, 0.53);
+}
+
+#lower {
+  background: rgba(99, 99, 99, 0);
+  width: 360px;
+  padding: 5px 20px;
+  margin-top: 20px;
+}
+
+.check {
+  display: inline;
+  float: none;
+  font-size: 11px;
+  padding: 20px;
+}
+
+input[type="submit"] {
+  width: 70px;
+  padding: 5px 2px;
+  border: 2px solid #000000;
+  color: #020202;
+  background: rgba(255, 255, 255, 0);
+  position: relative;
+
+}
+
+#rejestracja, input[type="submit"] {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}

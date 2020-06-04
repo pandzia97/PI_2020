@@ -8,8 +8,9 @@ import { ListaAnkietComponent } from './lista-ankiet/lista-ankiet.component';
 import { RejestracjaComponent } from './rejestracja/rejestracja.component';
 import { DodanieAnkietyComponent } from './dodanie-ankiety/dodanie-ankiety.component';
 import { MenuComponent } from './menu/menu.component';
-import { TestComponent } from './test/test.component';
 import { HelloComponent } from './hello/hello.component';
+import { StopkaComponent } from './stopka/stopka.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,9 @@ import { HelloComponent } from './hello/hello.component';
     RejestracjaComponent,
     DodanieAnkietyComponent,
     MenuComponent,
-    TestComponent,
-    HelloComponent
+    HelloComponent,
+    StopkaComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

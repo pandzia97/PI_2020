@@ -1,1 +1,16 @@
-<p>rejestracja works!</p>
+<div id="rejestracja">
+  <form>
+    <label for="username">Podaj swój login:</label>
+    <input type="text" id="username" name="username">
+    <label for="password">Podaj swoje hasło:</label>
+    <input type="password" id="password" name="password">
+    <label for="confirm-password">Potwierdź swoje hasło:</label>
+    <input type="confirm-password" id="confirm-password" name="confirm-password">
+    <label for="email">Podaj swój adres email:</label>
+    <input type="email" id="email" name="email">
+
+    <div id="lower">
+      <input type="submit" value="Zarejestruj się" (click)="verifyRegisterData()">
+    </div>
+  </form>
+</div>
