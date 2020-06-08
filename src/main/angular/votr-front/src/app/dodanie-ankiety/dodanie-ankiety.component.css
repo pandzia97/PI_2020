@@ -1,0 +1,24 @@
+#add-survey {
+  width: 400px;
+  margin: 0 auto;
+  padding: 15px 0 0;
+  background-color: rgba(255, 255, 255, 0.57);
+  border: 2px solid #000000;
+  font: 16px calibri;
+  letter-spacing: -1px;
+}
+
+
+#question {
+  display: block;
+  width: 360px;
+  margin: 0 auto;
+  padding: 10px 5px;
+  border: 2px solid #000000;
+  outline: 5px solid #ffffff;
+  font-size: 22px;
+}
+
+#question:focus {
+  outline: 5px solid rgba(0, 102, 255, 0.53);
+}
