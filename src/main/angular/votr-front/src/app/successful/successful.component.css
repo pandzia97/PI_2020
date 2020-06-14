@@ -1,4 +1,4 @@
-p {
+.successful {
   border: 2px solid #000000;
   border-radius: 5px 10px 5px 10px;
   background-color: rgba(255, 255, 255, 0.57);
@@ -8,9 +8,3 @@ p {
   padding: 20px;
 }
 
-button {
-  background: rgba(255, 0, 0, 0);
-  width: 360px;
-  padding: 5px 20px;
-  margin-top: 20px;
-}

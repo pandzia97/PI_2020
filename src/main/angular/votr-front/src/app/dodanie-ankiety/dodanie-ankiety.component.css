@@ -1,24 +1,55 @@
-#add-survey {
+#dodanie_ankiety {
   width: 400px;
-  margin: 0 auto;
-  padding: 15px 0 0;
-  background-color: rgba(255, 255, 255, 0.57);
+  margin: auto;
+  padding: 5px 300px;
+  background: rgba(255, 255, 255, 0.57);
   border: 2px solid #000000;
   font: 16px calibri;
   letter-spacing: -1px;
 }
 
+form {
+  margin: 0;
+}
 
-#question {
+label {
+  display: block;
+  width: 260px;
+  padding: 10px 20px;
+  color: #000000;
+  font-size: 16px;
+}
+
+#name, #question1, #question2, #question3, #question4, #question5, #answer1_1, #answer1_2,#answer1_3, #answer2_1,
+#answer2_2, #answer2_3, #answer3_1, #answer3_2, #answer3_2, #answer3_3, #answer4_1, #answer4_2, #answer4_3, #answer5_1,
+#answer5_2, #answer5_3 {
   display: block;
   width: 360px;
   margin: 0 auto;
-  padding: 10px 5px;
+  padding: 20px 100px;
   border: 2px solid #000000;
   outline: 5px solid #ffffff;
   font-size: 22px;
 }
 
-#question:focus {
+#name:focus, #question1:focus, #question2:focus, #question3:focus, #question4:focus, #question5:focus, #answer1_1:focus,
+#answer1_2:focus, #answer1_3:focus, #answer2_1:focus, #answer2_2:focus, #answer2_3:focus, #answer3_1:focus,
+#answer3_2:focus, #answer3_2:focus, #answer3_3:focus, #answer4_1:focus, #answer4_2:focus, #answer4_3:focus,
+#answer5_1:focus, #answer5_2:focus, #answer5_3:focus {
   outline: 5px solid rgba(0, 102, 255, 0.53);
+}
+#lower {
+  background: rgba(99, 99, 99, 0);
+  width: 360px;
+  padding: 5px 20px;
+  margin-top: 20px;
+}
+input[type="submit"] {
+  width: 70px;
+  padding: 5px 100px;
+  border: 2px solid #000000;
+  color: #020202;
+  background: rgba(255, 255, 255, 0);
+
+
 }

@@ -11,6 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HelloComponent } from './hello/hello.component';
 import { StopkaComponent } from './stopka/stopka.component';
 import { ErrorComponent } from './error/error.component';
+import { SuccessfulComponent } from './successful/successful.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ErrorComponent } from './error/error.component';
     MenuComponent,
     HelloComponent,
     StopkaComponent,
-    ErrorComponent
+    ErrorComponent,
+    SuccessfulComponent
   ],
   imports: [
     BrowserModule,
