@@ -1,18 +1,25 @@
 package ovh.piwowarczyk.votr.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "user")
 public class User implements Serializable {
 
+    @Id
+    @GeneratedValue
     private int userID;
     private String login;
     private String password;
     private String email;
+    @Column(name = "display_name")
     private String displayName;
+    @Column(name = "role_id")
+    @Enumerated(value = EnumType.ORDINAL)
     private UserRole userRole;
 
-    public User() {
-    }
+    public User() {}
 
     public int getUserID() {
         return userID;
