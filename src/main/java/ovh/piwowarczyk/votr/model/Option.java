@@ -1,10 +1,21 @@
 package ovh.piwowarczyk.votr.model;
 
-public class Answer {
-    private long id;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "answer")
+public class Option {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Question question;
+
     private String answer;
 
-    public Answer(){}
+    public Option(){}
 
     public long getId() {
         return id;
