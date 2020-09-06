@@ -1,13 +1,24 @@
 package ovh.piwowarczyk.votr.model;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "question")
 public class Question {
-    private long id;
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Survey survey;
     private String question;
-    private List<Answer> answerList;
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Option> optionList;
+
 
     public Question() {}
+
 
     public long getId() {
         return id;
@@ -25,11 +36,11 @@ public class Question {
         this.question = question;
     }
 
-    public List<Answer> getAnswerList() {
-        return answerList;
+    public List<Option> getOptionList() {
+        return optionList;
     }
 
-    public void setAnswerList(List<Answer> answerList) {
-        this.answerList = answerList;
+    public void setOptionList(List<Option> optionList) {
+        this.optionList = optionList;
     }
 }
