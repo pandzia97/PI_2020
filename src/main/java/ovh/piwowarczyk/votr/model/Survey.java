@@ -10,12 +10,17 @@ public class Survey {
     @GeneratedValue
     private long id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User author;
+
     private String name;
 
     @OneToMany(mappedBy = "survey", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Question> questions;
 
     private Boolean active;
+
+    private Boolean finished;
 
 
     public Survey() {}
@@ -25,6 +30,14 @@ public class Survey {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
     public String getName() {
@@ -49,5 +62,13 @@ public class Survey {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public Boolean getFinished() {
+        return finished;
+    }
+
+    public void setFinished(Boolean finished) {
+        this.finished = finished;
     }
 }
