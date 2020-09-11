@@ -2,7 +2,6 @@ package ovh.piwowarczyk.votr.services;
 
 import ovh.piwowarczyk.votr.model.User;
 import ovh.piwowarczyk.votr.model.UserRole;
-
 import java.util.List;
 
 public interface UserService {
