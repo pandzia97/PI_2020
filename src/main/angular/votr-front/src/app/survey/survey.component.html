@@ -1,0 +1,32 @@
+<div id="dodanie_ankiety">
+
+
+  <h3>Dodanie ankiety</h3>
+  <div *ngIf="editEnabled == true">
+    <input #surveyName type="text" [value]="survey.name">
+
+    <fa-icon (click)="discard()"  [icon]="faTimes"></fa-icon>
+    <fa-icon (click)="accept(surveyName.value)"  [icon]="faCheck"></fa-icon>
+
+  </div>
+  <div *ngIf="editEnabled == false" >
+
+    <div id="name">    <input #surveyName type="text" [value]="survey.name"disabled>
+      <fa-icon (click)="enableEdit()" [icon]="faEdit"></fa-icon>
+    </div>
+
+
+  </div>
+  <app-question *ngFor="let question of survey.questions"
+                [question] = "question" ></app-question>
+
+
+
+  <p (click)="addNewQuestion()">Dodaj pytanie</p>
+
+<div>
+  <p (click)="saveSurvey()">Dodaj ankietę </p>
+  <p (click)="resetSurvey()">Odrzuć ankietę</p>
+</div>
+
+</div>
