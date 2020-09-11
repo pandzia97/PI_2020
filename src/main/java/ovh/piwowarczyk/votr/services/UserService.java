@@ -2,7 +2,6 @@ package ovh.piwowarczyk.votr.services;
 
 import ovh.piwowarczyk.votr.model.User;
 import ovh.piwowarczyk.votr.model.UserRole;
-
 import java.util.List;
 
 public interface UserService {
@@ -12,4 +11,6 @@ public interface UserService {
     List<User> getAllUsers(UserRole role);
     User getUserForLogin(String login);
     User getUserForId(int id);
+
+
 }
