@@ -1,11 +1,11 @@
 #dodanie_ankiety {
-  width: 400px;
-  margin: auto;
-  padding: 5px 300px;
-  background: rgba(255, 255, 255, 0.57);
   border: 2px solid #000000;
-  font: 16px calibri;
-  letter-spacing: -1px;
+  border-radius: 5px 10px 5px 10px;
+  background-color: rgba(255, 255, 255, 0.57);
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 20px;
 }
 
 form {
@@ -29,3 +29,6 @@ label {
   margin-top: 20px;
 }
 
+#name:focus {
+  outline: 5px solid rgba(0, 102, 255, 0.53);
+}
