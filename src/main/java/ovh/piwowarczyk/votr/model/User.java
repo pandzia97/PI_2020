@@ -2,6 +2,7 @@ package ovh.piwowarczyk.votr.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -15,9 +16,11 @@ public class User implements Serializable {
     private String email;
     @Column(name = "display_name")
     private String displayName;
-    @Column(name = "role_id")
-    @Enumerated(value = EnumType.ORDINAL)
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "user_role")
     private UserRole userRole;
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    private List<Survey> surveys;
 
     public User() {}
 
@@ -69,4 +72,11 @@ public class User implements Serializable {
         this.userRole = userRole;
     }
 
+    public List<Survey> getSurveys() {
+        return surveys;
+    }
+
+    public void setSurveys(List<Survey> surveys) {
+        this.surveys = surveys;
+    }
 }
