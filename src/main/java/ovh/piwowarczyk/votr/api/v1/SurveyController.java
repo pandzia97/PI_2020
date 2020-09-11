@@ -26,7 +26,7 @@ public class SurveyController {
     }
 
     @PutMapping("{surveyId}")
-    public String updateSurvey(@RequestBody Survey survey,@PathVariable long surveyId){
+    public String udpateSurvey(@RequestBody Survey survey,@PathVariable long surveyId){
         surveyService.updateExisting(survey);
         return "Survey " + surveyId + " updated sucessfully";
     }
