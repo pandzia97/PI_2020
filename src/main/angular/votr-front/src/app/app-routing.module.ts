@@ -7,6 +7,7 @@ import {SurveyComponent} from "./survey/survey.component";
 import {ErrorComponent} from "./error/error.component";
 import {SuccessfulComponent} from "./successful/successful.component";
 import {AboutComponent} from "./about/about.component";
+import {ListaAnkietComponent} from "./lista-ankiet/lista-ankiet.component";
 
 const routes: Routes = [
   { path: 'login-component', component: LoginComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'successful', component: SuccessfulComponent},
   { path: 'about', component: AboutComponent},
   { path: 'ankieta', component: SurveyComponent},
+  { path: 'lista-ankiet', component: ListaAnkietComponent},
   { path: '**', component: ErrorComponent}
 
 
