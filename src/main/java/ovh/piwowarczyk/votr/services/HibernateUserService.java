@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ovh.piwowarczyk.votr.model.User;
 import ovh.piwowarczyk.votr.model.UserRole;
-import ovh.piwowarczyk.votr.utils.HibernateConfig;
+
 import java.util.List;
 
 @Service("HibernateUserService")
