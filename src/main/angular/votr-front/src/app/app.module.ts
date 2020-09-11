@@ -18,6 +18,7 @@ import {FormsModule} from "@angular/forms";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AboutComponent } from './about/about.component';
 import { MainComponent } from './main/main.component';
+import { SurveyListElementComponent } from './survey-list-element/survey-list-element.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { MainComponent } from './main/main.component';
     QuestionComponent,
     OptionComponent,
     AboutComponent,
-    MainComponent
+    MainComponent,
+    SurveyListElementComponent
 
   ],
   imports: [
