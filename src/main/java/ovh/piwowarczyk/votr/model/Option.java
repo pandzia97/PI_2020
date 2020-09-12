@@ -2,11 +2,13 @@ package ovh.piwowarczyk.votr.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "answer")
+@Proxy(lazy = false)
 public class Option {
     @Id
     @GeneratedValue

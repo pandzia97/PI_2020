@@ -50,7 +50,6 @@ public class HibernateSurveyService implements SurveyService {
     }
 
     @Override
-    @Transactional
     public List<Survey> getAllSurveys() {
         List<Survey> surveyList = null;
 

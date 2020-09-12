@@ -1,12 +1,14 @@
 package ovh.piwowarczyk.votr.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "question")
+@Proxy(lazy = false)
 public class Question {
 
     @Id
