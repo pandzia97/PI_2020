@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "answer")
 @Proxy(lazy = false)
+@Embeddable
 public class Option {
     @Id
     @GeneratedValue

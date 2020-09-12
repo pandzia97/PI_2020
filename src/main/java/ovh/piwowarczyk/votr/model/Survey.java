@@ -19,7 +19,7 @@ public class Survey {
 
     private String name;
 
-    @OneToMany(mappedBy = "survey", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ElementCollection
     private List<Question> questions;
 
     private Boolean active;

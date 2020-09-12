@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 @Table(name = "question")
 @Proxy(lazy = false)
+@Embeddable
 public class Question {
 
     @Id
@@ -18,7 +19,7 @@ public class Question {
     @JsonIgnore
     private Survey survey;
     private String question;
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ElementCollection
     private List<Option> optionList;
 
 

@@ -24,13 +24,16 @@ public class SurveyController {
     @CrossOrigin
     public String createSurvey(@RequestBody Survey survey){
         surveyService.createNew(survey);
-        return "survey " + survey.getId() + " created successfully";
+        return "{\"result\": \"survey " + survey.getId() + " created successfully\"}";
     }
 
     @PutMapping("{surveyId}")
     @CrossOrigin
     public String updateSurvey(@RequestBody Survey survey,@PathVariable long surveyId){
-        surveyService.updateExisting(survey);
-        return "Survey " + surveyId + " updated sucessfully";
+        if(surveyId == survey.getId()) {
+            surveyService.updateExisting(survey);
+            return "{\"result\": \"survey " + survey.getId() + " updated successfully\"}";
+        }
+        return "{\"error\":\"Malformed request\"}";
     }
 }
