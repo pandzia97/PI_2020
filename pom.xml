@@ -11,8 +11,27 @@
     <groupId>ovh.piwowarczyk</groupId>
     <artifactId>votr</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <packaging>${packaging.type}</packaging>
     <name>votr</name>
-    <description>Anonymus Voting Platform</description>
+    <description>Anonymous Voting Platform</description>
+
+    <profiles>
+        <profile>
+            <id>standalone</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <packaging.type>jar</packaging.type>
+            </properties>
+        </profile>
+        <profile>
+            <id>webapp</id>
+            <properties>
+                <packaging.type>war</packaging.type>
+            </properties>
+        </profile>
+    </profiles>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
