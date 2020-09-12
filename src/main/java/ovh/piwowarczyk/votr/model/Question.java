@@ -1,25 +1,25 @@
 package ovh.piwowarczyk.votr.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Proxy;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "question")
-@Proxy(lazy = false)
-@Embeddable
 public class Question {
 
     @Id
     @GeneratedValue
     private Long id;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JsonIgnore
+    @JsonBackReference
     private Survey survey;
     private String question;
-    @ElementCollection
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Option> optionList;
 
 

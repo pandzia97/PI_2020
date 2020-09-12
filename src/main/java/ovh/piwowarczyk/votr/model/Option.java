@@ -1,22 +1,20 @@
 package ovh.piwowarczyk.votr.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "answer")
-@Proxy(lazy = false)
-@Embeddable
 public class Option {
     @Id
     @GeneratedValue
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JsonIgnore
+    @JsonBackReference
     private Question question;
 
     private String answer;
