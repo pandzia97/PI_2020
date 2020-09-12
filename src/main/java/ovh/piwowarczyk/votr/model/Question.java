@@ -17,7 +17,7 @@ public class Question {
     @JsonBackReference
     private Survey survey;
     private String question;
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @JsonManagedReference
     private List<Option> options;
 

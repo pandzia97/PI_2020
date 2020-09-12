@@ -1,8 +1,6 @@
 package ovh.piwowarczyk.votr.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 import java.util.List;
@@ -19,7 +17,7 @@ public class Survey {
 
     private String name;
 
-    @OneToMany(mappedBy = "survey", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "survey", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @JsonManagedReference
     private List<Question> questions;
 
