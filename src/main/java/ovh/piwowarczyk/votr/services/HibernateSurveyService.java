@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import ovh.piwowarczyk.votr.model.Survey;
 import ovh.piwowarczyk.votr.model.User;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service("HibernateSurveyService")
@@ -49,6 +50,7 @@ public class HibernateSurveyService implements SurveyService {
     }
 
     @Override
+    @Transactional
     public List<Survey> getAllSurveys() {
         List<Survey> surveyList = null;
 
