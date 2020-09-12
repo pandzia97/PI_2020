@@ -1,7 +1,6 @@
 package ovh.piwowarczyk.votr.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -20,7 +19,7 @@ public class Question {
     private String question;
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<Option> optionList;
+    private List<Option> options;
 
 
     public Question() {}
@@ -42,11 +41,11 @@ public class Question {
         this.question = question;
     }
 
-    public List<Option> getOptionList() {
-        return optionList;
+    public List<Option> getOptions() {
+        return options;
     }
 
-    public void setOptionList(List<Option> optionList) {
-        this.optionList = optionList;
+    public void setOptions(List<Option> optionList) {
+        this.options = optionList;
     }
 }
