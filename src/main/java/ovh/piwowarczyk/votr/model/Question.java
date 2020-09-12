@@ -1,5 +1,7 @@
 package ovh.piwowarczyk.votr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class Question {
     private Survey survey;
     private String question;
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Option> optionList;
 
 

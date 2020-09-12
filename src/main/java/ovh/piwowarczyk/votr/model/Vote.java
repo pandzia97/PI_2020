@@ -1,5 +1,7 @@
 package ovh.piwowarczyk.votr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -15,6 +17,7 @@ public class Vote {
     private Survey survey;
     private Date date;
     @OneToMany(mappedBy = "vote")
+    @JsonIgnore
     private List<Answer> answers;
 
     public Vote() {}

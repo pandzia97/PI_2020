@@ -1,5 +1,7 @@
 package ovh.piwowarczyk.votr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -20,6 +22,7 @@ public class User implements Serializable {
     @Column(name = "user_role")
     private UserRole userRole;
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Survey> surveys;
 
     public User() {}
