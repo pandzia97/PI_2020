@@ -15,17 +15,20 @@ public class SurveyController {
     private SurveyService surveyService;
 
     @GetMapping
+    @CrossOrigin
     public List<Survey> getAllSurveys() {
         return surveyService.getAllSurveys();
     }
 
     @PostMapping
+    @CrossOrigin
     public String createSurvey(@RequestBody Survey survey){
         surveyService.createNew(survey);
         return "survey " + survey.getId() + " created successfully";
     }
 
     @PutMapping("{surveyId}")
+    @CrossOrigin
     public String updateSurvey(@RequestBody Survey survey,@PathVariable long surveyId){
         surveyService.updateExisting(survey);
         return "Survey " + surveyId + " updated sucessfully";
