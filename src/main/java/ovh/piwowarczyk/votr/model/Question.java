@@ -13,10 +13,10 @@ public class Question {
     @GeneratedValue
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private Survey survey;
     private String question;
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
     private List<Option> optionList;
 
 

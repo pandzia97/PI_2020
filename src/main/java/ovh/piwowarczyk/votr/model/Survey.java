@@ -17,7 +17,6 @@ public class Survey {
 
     private String name;
 
-    @JsonIgnore()
     @OneToMany(mappedBy = "survey", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Question> questions;
 

@@ -14,10 +14,10 @@ public class Vote {
     private Long voteID;
     private String hashedIdentifier;
     @ManyToOne
+    @JsonIgnore
     private Survey survey;
     private Date date;
     @OneToMany(mappedBy = "vote")
-    @JsonIgnore
     private List<Answer> answers;
 
     public Vote() {}
