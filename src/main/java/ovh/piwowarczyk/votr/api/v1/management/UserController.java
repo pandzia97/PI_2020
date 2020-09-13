@@ -22,11 +22,13 @@ public class UserController {
     }
 
     @PostMapping
+    @CrossOrigin
     public String createUser(@RequestBody User user){
         userService.createNew(user);
         return "User " + user.getUserID() + " created successfully";
     }
     @PutMapping("{userId}")
+    @CrossOrigin
     public String updateUser(@PathVariable Long userId, @RequestBody User user){
         userService.updateExisting(user);
         return "User " + user.getUserID() + " updated successfully";

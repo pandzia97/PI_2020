@@ -11,5 +11,6 @@ public interface UserService {
     List<User> getAllUsers();
     List<User> getAllUsers(UserRole role);
     User getUserForLogin(String login);
+    User getUserForEmail(String email);
     User getUserForId(int id);
 }

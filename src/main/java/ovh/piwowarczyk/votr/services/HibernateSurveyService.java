@@ -110,7 +110,7 @@ public class HibernateSurveyService implements SurveyService {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
-            String query = "FROM Survey WHERE  name =\"%" + name.trim() + "%\"";
+            String query = "FROM Survey WHERE  name like \"%" + name.trim() + "%\"";
             List<Survey> surveyList = session.createQuery(query, Survey.class).list();
             if(surveyList.size()==1){
                 survey = surveyList.get(0);

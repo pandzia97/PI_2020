@@ -106,6 +106,27 @@ public class HibernateUserService implements UserService {
     }
 
     @Override
+    public User getUserForEmail(String email) {
+        User user = null;
+
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()){
+            transaction = session.beginTransaction();
+            String query = "FROM User WHERE email =\"" + email.trim() + "\"";
+            List<User> userList = session.createQuery(query, User.class).list();
+            if(userList.size()==1){
+                user = userList.get(0);
+            }
+            transaction.commit();
+        }catch(Exception e) {
+            if (transaction!=null) {
+                transaction.rollback();
+            }
+        }
+        return user;
+    }
+
+    @Override
     public User getUserForId(int id) {
         User user = null;
 
