@@ -55,6 +55,7 @@ input[type="submit"] {
   color: #020202;
   background: rgba(255, 255, 255, 0);
   position: relative;
+  text-align: center;
 
 }
 
@@ -62,4 +63,6 @@ input[type="submit"] {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  text-align: center;
 }
+

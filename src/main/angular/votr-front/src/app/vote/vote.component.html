@@ -1,0 +1,14 @@
+<div id="vote">
+<div id="vote2" *ngIf="vote.survey !=undefined">
+  <h3>{{vote.survey.name}}</h3>
+
+  <app-answer *ngFor="let answer of vote.answers" [answer]="answer"></app-answer>
+  <br>
+  <hr>
+
+  <button (click)="sendVote()">Zapisz odpowiedzi</button>
+
+
+
+</div>
+</div>

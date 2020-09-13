@@ -8,6 +8,8 @@ import {ErrorComponent} from "./error/error.component";
 import {SuccessfulComponent} from "./successful/successful.component";
 import {AboutComponent} from "./about/about.component";
 import {ListaAnkietComponent} from "./lista-ankiet/lista-ankiet.component";
+import {VoteComponent} from "./vote/vote.component";
+import {AnswerCheckComponent} from "./answer-check/answer-check.component";
 
 const routes: Routes = [
   { path: 'login-component', component: LoginComponent },
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'ankieta', component: SurveyComponent},
   { path: 'lista-ankiet', component: ListaAnkietComponent},
+  { path: 'glosuj/:id', component: VoteComponent},
+  { path: 'sprawdz', component: AnswerCheckComponent},
   { path: '**', component: ErrorComponent}
 
 

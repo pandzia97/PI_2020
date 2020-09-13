@@ -4,14 +4,14 @@ import {Option} from "../option/option";
 export class Question {
 
     id: number;
-    value: String;
-    answers: Array<Option>;
+    question: String;
+    options: Array<Option>;
 
 
-  constructor(id?: number, value?: String, answers?: Array<Option>) {
+  constructor(id?: number, question?: String, options?: Array<Option>) {
     this.id = id;
-    this.value = value ? value: "Podaj treść pytania";
-    this.answers = answers ? answers: [];
+    this.question = question ? question: "Podaj treść pytania";
+    this.options = options ? options: [];
   }
 
 

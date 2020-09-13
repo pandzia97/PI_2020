@@ -1,3 +1,12 @@
+#answercheck {
+  border: 2px solid #000000;
+  border-radius: 5px 10px 5px 10px;
+  background-color: rgba(255, 255, 255, 0.57);
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 20px;
+}
 button {
   width: 70px;
   padding: 5px 2px;

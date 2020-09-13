@@ -19,6 +19,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AboutComponent } from './about/about.component';
 import { MainComponent } from './main/main.component';
 import { SurveyListElementComponent } from './survey-list-element/survey-list-element.component';
+import {HttpClientModule} from "@angular/common/http";
+import { VoteComponent } from './vote/vote.component';
+import { AnswerComponent } from './answer/answer.component';
+import { AnswerCheckComponent } from './answer-check/answer-check.component';
+
 
 
 @NgModule({
@@ -37,14 +42,20 @@ import { SurveyListElementComponent } from './survey-list-element/survey-list-el
     OptionComponent,
     AboutComponent,
     MainComponent,
-    SurveyListElementComponent
+    SurveyListElementComponent,
+    VoteComponent,
+    AnswerComponent,
+    AnswerCheckComponent
+
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

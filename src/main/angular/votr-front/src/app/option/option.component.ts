@@ -34,7 +34,7 @@ export class OptionComponent implements OnInit {
 
   accept(value: string) {
     if (this.editEnabled == true) {
-      this.option.value = value;
+      this.option.answer = value;
       this.editEnabled = false;
     }
   }

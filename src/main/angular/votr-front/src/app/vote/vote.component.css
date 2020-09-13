@@ -1,3 +1,13 @@
+#vote {
+  border: 2px solid #000000;
+  border-radius: 5px 10px 5px 10px;
+  background-color: rgba(255, 255, 255, 0.57);
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 20px;
+}
+
 button {
   width: 70px;
   padding: 5px 2px;

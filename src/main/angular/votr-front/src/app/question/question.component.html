@@ -1,21 +1,22 @@
-<div *ngIf="editEnabled == false">
+<div id="question" *ngIf="editEnabled == false">
 
-  <input #questionValue type="text"  [value]="question.value" disabled/>
+  <input #questionValue type="text" [value]="question.question" disabled/>
 
   <fa-icon (click)="enableEdit()" [icon]="faEdit"></fa-icon>
 
 </div>
 <div *ngIf="editEnabled == true">
-  <input #questionValue type="text"  [value]="question.value"/>
+  <input #questionValue type="text"  [value]="question.question"/>
 
  <fa-icon (click)="accept(questionValue.value)"  [icon]="faCheck"></fa-icon>
  <fa-icon (click)="discard()"  [icon]="faTimes"></fa-icon>
 
 </div>
 <div>
-  <app-option *ngFor="let answer of question.answers"
+  <app-option *ngFor="let answer of question.options"
                 [option] = "answer" ></app-option>
-  <p (click)="addNewAnswer()">Dodaj odpowiedź</p>
+  <button (click)="addNewAnswer()">Dodaj odpowiedź</button>
+  <hr>
 </div>
 
 

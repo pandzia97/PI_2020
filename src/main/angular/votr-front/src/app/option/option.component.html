@@ -1,13 +1,13 @@
 
 <div *ngIf="editEnabled == false">
 
-  <input #questionValue type="text"  [value]="option.value" disabled/>
+  <input #questionValue type="text" [value]="option.answer" disabled/>
 
        <fa-icon (click)="enableEdit()" [icon]="faEdit"></fa-icon>
 
 </div>
 <div *ngIf="editEnabled == true">
-  <input #questionValue type="text"  [value]="option.value"/>
+  <input #questionValue type="text"  [value]="option.answer"/>
 
   <fa-icon (click)="accept(questionValue.value)"  [icon]="faCheck"></fa-icon>
    <fa-icon (click)="discard()"  [icon]="faTimes"></fa-icon>
