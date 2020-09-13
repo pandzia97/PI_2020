@@ -22,8 +22,6 @@ export class QuestionComponent implements OnInit {
   faTimes = faTimes;
 
 
-
-
   constructor() {
   }
 
@@ -39,7 +37,9 @@ export class QuestionComponent implements OnInit {
 
   accept(newValue: String) {
     if (this.editEnabled == true) {
-      this.question.value = newValue;
+
+      this.question.question = newValue;
+
       this.editEnabled = false;
 
     }
@@ -54,7 +54,9 @@ export class QuestionComponent implements OnInit {
 
   addNewAnswer() {
     let answer = new Option();
-    this.question.answers.push(answer);
+
+    this.question.options.push(answer);
+
 
   }
 }
