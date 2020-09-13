@@ -15,14 +15,22 @@ public class VoteController {
     @Autowired
     private VoteService voteService;
 
-    @GetMapping("/survey/{id}")
+    @GetMapping("survey/{id}")
+    @CrossOrigin
     public List<Vote> getVotesForSurvey(Long surveyId){
         return voteService.getVotesForSurveyId(surveyId);
     }
 
     @PostMapping
+    @CrossOrigin
     public String addVote(@RequestBody Vote vote){
         Vote addedVote = voteService.createNew(vote);
         return "{\"HASHED_IDENTIFIER\": \"" + addedVote.getHashedIdentifier() + "\"}";
+    }
+
+    @GetMapping("{hash}")
+    @CrossOrigin
+    public Vote getVoteForHash(@PathVariable String hash){
+        return voteService.getVoteForHashedIdentifier(hash);
     }
 }
