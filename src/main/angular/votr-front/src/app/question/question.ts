@@ -12,6 +12,7 @@ export class Question {
     this.id = id;
     this.question = question ? question: "Podaj treść pytania";
     this.options = options ? options: [];
+
   }
 
 

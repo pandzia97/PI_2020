@@ -37,7 +37,9 @@ export class QuestionComponent implements OnInit {
 
   accept(newValue: String) {
     if (this.editEnabled == true) {
+
       this.question.question = newValue;
+
       this.editEnabled = false;
 
     }
@@ -52,7 +54,9 @@ export class QuestionComponent implements OnInit {
 
   addNewAnswer() {
     let answer = new Option();
+
     this.question.options.push(answer);
+
 
   }
 }

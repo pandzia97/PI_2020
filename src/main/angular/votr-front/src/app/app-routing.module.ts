@@ -11,6 +11,7 @@ import {ListaAnkietComponent} from "./lista-ankiet/lista-ankiet.component";
 import {VoteComponent} from "./vote/vote.component";
 import {AnswerCheckComponent} from "./answer-check/answer-check.component";
 
+
 const routes: Routes = [
   { path: 'login-component', component: LoginComponent },
   { path: 'dodanie-ankiety', component: SurveyComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'lista-ankiet', component: ListaAnkietComponent},
   { path: 'glosuj/:id', component: VoteComponent},
   { path: 'sprawdz', component: AnswerCheckComponent},
+
   { path: '**', component: ErrorComponent}
 
 

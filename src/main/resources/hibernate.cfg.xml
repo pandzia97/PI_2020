@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mariadb://localhost:3306/trunk</property>
+        <property name="connection.username">trunkTestUser</property>
+        <property name="connection.password">v9D3b5gBkKYCaHGe</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <mapping class="ovh.piwowarczyk.votr.model.User" />
+        <mapping class="ovh.piwowarczyk.votr.model.Survey"/>
+        <mapping class="ovh.piwowarczyk.votr.model.Question"/>
+        <mapping class="ovh.piwowarczyk.votr.model.Option"/>
+    </session-factory>
+</hibernate-configuration>

@@ -4,6 +4,7 @@ import {SurveyListElementComponent} from "../survey-list-element/survey-list-ele
 import {HttpClient} from "@angular/common/http";
 import {computeStartOfLinePositions} from "@angular/compiler-cli/ngcc/src/sourcemaps/source_file";
 
+
 @Component({
   selector: 'app-lista-ankiet',
   templateUrl: './lista-ankiet.component.html',
@@ -13,6 +14,7 @@ export class ListaAnkietComponent implements OnInit {
 
   surveys: Array<Survey>;
 
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -21,6 +23,7 @@ export class ListaAnkietComponent implements OnInit {
       this.surveys = data as Array<Survey>;
       console.log(this.surveys);
     })
+
   }
 
 }

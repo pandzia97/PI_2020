@@ -26,6 +26,7 @@ import { AnswerCheckComponent } from './answer-check/answer-check.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,10 +43,12 @@ import { AnswerCheckComponent } from './answer-check/answer-check.component';
     OptionComponent,
     AboutComponent,
     MainComponent,
+
     SurveyListElementComponent,
     VoteComponent,
     AnswerComponent,
     AnswerCheckComponent
+
 
 
 
@@ -56,6 +59,7 @@ import { AnswerCheckComponent } from './answer-check/answer-check.component';
     FormsModule,
     FontAwesomeModule,
     HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

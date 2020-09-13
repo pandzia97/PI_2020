@@ -9,7 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class Auth {
     @PostMapping("/register")
     public String registerNewUser(String payload){
-        return "result";
+        return "register";
+    }
+    @PostMapping("/login")
+    public String loginUser(String payload){
+        return "login";
+    }
+    @PostMapping("/logout")
+    public String logoutUser(String payload){
+        return "logout";
     }
 
 }

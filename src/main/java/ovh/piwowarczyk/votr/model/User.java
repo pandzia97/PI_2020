@@ -1,18 +1,31 @@
 package ovh.piwowarczyk.votr.model;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
+
+@Entity
+@Table(name = "user")
 public class User implements Serializable {
 
+    @Id
+    @GeneratedValue
     private int userID;
     private String login;
     private String password;
     private String email;
+    @Column(name = "display_name")
     private String displayName;
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "user_role")
     private UserRole userRole;
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Survey> surveys;
 
-    public User() {
-    }
+    public User() {}
 
     public int getUserID() {
         return userID;
@@ -62,4 +75,11 @@ public class User implements Serializable {
         this.userRole = userRole;
     }
 
+    public List<Survey> getSurveys() {
+        return surveys;
+    }
+
+    public void setSurveys(List<Survey> surveys) {
+        this.surveys = surveys;
+    }
 }

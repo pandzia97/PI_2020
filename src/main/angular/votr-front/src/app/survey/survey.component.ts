@@ -2,7 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Survey} from "./survey";
 import { faCheck, faTimes, faEdit } from '@fortawesome/free-solid-svg-icons';
 import {Question} from "../question/question";
+
 import {HttpClient, HttpHandler, HttpHeaders} from "@angular/common/http";
+
 
 @Component({
   selector: 'app-survey',
@@ -19,11 +21,13 @@ export class SurveyComponent implements OnInit {
 
 
 
+
   constructor(  private http: HttpClient) {
 
 
     this.survey = new Survey();
     this.editEnabled = true;
+
 
 
   }
@@ -59,12 +63,14 @@ export class SurveyComponent implements OnInit {
 
   saveSurvey(){
     //TODO implementacja requestu do API
+
     console.log(JSON.stringify(this.survey) );
     this.http.post<Survey>("http://votr-test.piwowarczyk.ovh/api/v1/surveys",JSON.stringify(this.survey),{
       headers : new HttpHeaders({ 'Content-Type': 'application/json' })}
   ).subscribe(data => {
       console.log(data);
     });
+
   }
 
   resetSurvey() {

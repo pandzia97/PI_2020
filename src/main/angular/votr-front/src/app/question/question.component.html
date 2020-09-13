@@ -2,21 +2,26 @@
 
   <input #questionValue type="text" [value]="question.question" disabled/>
 
+
   <fa-icon (click)="enableEdit()" [icon]="faEdit"></fa-icon>
 
 </div>
 <div *ngIf="editEnabled == true">
+
   <input #questionValue type="text"  [value]="question.question"/>
+
 
  <fa-icon (click)="accept(questionValue.value)"  [icon]="faCheck"></fa-icon>
  <fa-icon (click)="discard()"  [icon]="faTimes"></fa-icon>
 
 </div>
 <div>
+
   <app-option *ngFor="let answer of question.options"
                 [option] = "answer" ></app-option>
   <button (click)="addNewAnswer()">Dodaj odpowiedź</button>
   <hr>
+
 </div>
 
 

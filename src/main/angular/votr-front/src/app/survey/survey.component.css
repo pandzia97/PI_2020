@@ -33,6 +33,7 @@ label {
   outline: 5px solid rgba(0, 102, 255, 0.53);
 }
 
+
 button {
   width: 70px;
   padding: 5px 2px;
@@ -46,3 +47,4 @@ button {
   border-radius: 5px;
   text-align: center;
 }
+

@@ -1,13 +1,29 @@
 package ovh.piwowarczyk.votr.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "question")
 public class Question {
-    private long id;
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonBackReference
+    private Survey survey;
     private String question;
-    private List<Answer> answerList;
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @JsonManagedReference
+    private List<Option> options;
+
 
     public Question() {}
+
 
     public long getId() {
         return id;
@@ -25,11 +41,11 @@ public class Question {
         this.question = question;
     }
 
-    public List<Answer> getAnswerList() {
-        return answerList;
+    public List<Option> getOptions() {
+        return options;
     }
 
-    public void setAnswerList(List<Answer> answerList) {
-        this.answerList = answerList;
+    public void setOptions(List<Option> optionList) {
+        this.options = optionList;
     }
 }
