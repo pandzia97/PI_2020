@@ -20,6 +20,12 @@ public class SurveyController {
         return surveyService.getAllSurveys();
     }
 
+    @GetMapping("{surveyId}")
+    @CrossOrigin
+    public Survey getSurvey(@PathVariable long surveyId){
+        return surveyService.getSurveyForId(surveyId);
+    }
+
     @PostMapping
     @CrossOrigin
     public String createSurvey(@RequestBody Survey survey){
