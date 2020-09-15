@@ -25,8 +25,8 @@ public class HibernateVoteService implements VoteService {
 
 
             session.save(vote);
-            hashedVote = VoteHasher.hashVote(vote);
-            session.update(hashedVote);
+//            hashedVote = VoteHasher.hashVote(vote);
+//            session.update(hashedVote);
 
             transaction.commit();
         }catch (Exception e){
