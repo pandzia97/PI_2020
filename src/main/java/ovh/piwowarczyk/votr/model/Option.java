@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "answer")
+@Table(name = "option")
 public class Option {
     @Id
     @GeneratedValue

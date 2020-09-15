@@ -3,6 +3,7 @@ package ovh.piwowarczyk.votr.model;
 import javax.persistence.*;
 import java.util.Map;
 @Entity
+@Table(name="answer")
 public class Answer {
     @Id
     @GeneratedValue

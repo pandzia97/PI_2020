@@ -13,5 +13,7 @@
         <mapping class="ovh.piwowarczyk.votr.model.Survey"/>
         <mapping class="ovh.piwowarczyk.votr.model.Question"/>
         <mapping class="ovh.piwowarczyk.votr.model.Option"/>
+        <mapping class="ovh.piwowarczyk.votr.model.Vote"/>
+        <mapping class="ovh.piwowarczyk.votr.model.Answer"/>
     </session-factory>
 </hibernate-configuration>
