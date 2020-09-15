@@ -1,5 +1,7 @@
 package ovh.piwowarczyk.votr.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Map;
 @Entity
@@ -10,10 +12,13 @@ public class Answer {
     private Long id;
 
     @ManyToOne
+    @JsonBackReference
     private Vote vote;
     @ManyToOne
+    @JsonBackReference
     private Question question;
     @ManyToOne
+    @JsonBackReference
     private Option option;
 
     public Answer() {}

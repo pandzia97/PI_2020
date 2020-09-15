@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Data, Router} from "@angular/router";
 
 @Component({
   selector: 'app-answer-check',
@@ -9,12 +11,22 @@ export class AnswerCheckComponent implements OnInit {
 
   token: String;
 
-  constructor() { }
+
+  constructor(private http:HttpClient, private router: Router, private storage: Storage) {
+
+
+  }
 
   ngOnInit(): void {
   }
 
   search(query: string) {
+    this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/votes/" + this.token).subscribe(data=>{
+      this.storage.storage = data;
+      this.router.navigate(["glosuj"]);
+    })
     //TODO zapytanie do survey voteendpoint
   }
 }
+
+
