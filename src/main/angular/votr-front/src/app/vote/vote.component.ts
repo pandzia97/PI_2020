@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Vote} from "./vote";
 import {Survey} from "../survey/survey";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {Answer} from "../answer/answer";
 
@@ -35,6 +35,11 @@ export class VoteComponent implements OnInit {
   }
 
   sendVote() {
-    console.log(JSON.stringify(this.vote));
+
+    this.http.post("http://votr-test.piwowarczyk.ovh/api/v1/votes", JSON.stringify(this.vote),{
+      headers : new HttpHeaders({ 'Content-Type': 'application/json' })}
+  ).subscribe(data => {
+      console.log("recevid data: " + data);
+    });
   }
 }

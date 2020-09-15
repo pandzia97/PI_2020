@@ -21,10 +21,12 @@ public class HibernateVoteService implements VoteService {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
+            Vote hashedVote;
+
 
             session.save(vote);
-            vote = VoteHasher.hashVote(vote);
-            session.update(vote);
+            hashedVote = VoteHasher.hashVote(vote);
+            session.update(hashedVote);
 
             transaction.commit();
         }catch (Exception e){
