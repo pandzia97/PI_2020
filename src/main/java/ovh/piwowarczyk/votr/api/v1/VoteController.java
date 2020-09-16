@@ -25,7 +25,7 @@ public class VoteController {
         return voteService.getVotesForSurveyId(surveyId);
     }
 
-    @PostMapping
+    @PostMapping(consumes = "application/json")
     @CrossOrigin
     public String addVote(@RequestBody Vote vote){
         logger.info("received Answer list size: " + vote.getAnswers().size());
