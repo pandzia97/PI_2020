@@ -25,6 +25,6 @@ public class VoteHasher {
         vote.setHashedIdentifier(sha256hex);
 
         return vote;
-    };
+    }
 
 }

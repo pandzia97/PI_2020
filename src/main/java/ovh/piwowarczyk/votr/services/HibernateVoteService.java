@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ovh.piwowarczyk.votr.model.Vote;
+import ovh.piwowarczyk.votr.utils.VoteHasher;
 
 import java.util.List;
 
@@ -28,8 +29,8 @@ public class HibernateVoteService implements VoteService {
 
 
             session.save(vote);
-//            hashedVote = VoteHasher.hashVote(vote);
-//            session.update(hashedVote);
+            hashedVote = VoteHasher.hashVote(vote);
+            session.update(hashedVote);
 
             transaction.commit();
         }catch (Exception e){
@@ -84,7 +85,7 @@ public class HibernateVoteService implements VoteService {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
-            String query = "FROM Vote WHERE hashedIdentifier =" + hashedIdentifier;
+            String query = "FROM Vote WHERE hashedIdentifier = '" + hashedIdentifier + "'";
             List<Vote> voteList = session.createQuery(query, Vote.class).list();
             if(voteList.size()==1){
                 vote = voteList.get(0);

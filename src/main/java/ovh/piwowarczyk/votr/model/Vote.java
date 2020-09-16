@@ -1,6 +1,5 @@
 package ovh.piwowarczyk.votr.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -18,11 +17,10 @@ public class Vote {
     private Long voteID;
     private String hashedIdentifier;
     @ManyToOne
-    @JsonManagedReference
     private Survey survey;
     private Date date;
-    @OneToMany(mappedBy = "vote")
-    @JsonIgnore
+    @OneToMany(mappedBy = "vote", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Answer> answers;
 
     public Vote() {}
