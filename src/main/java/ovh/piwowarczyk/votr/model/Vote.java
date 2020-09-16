@@ -21,8 +21,7 @@ public class Vote {
     //@JsonManagedReference
     private Survey survey;
     private Date date;
-    @OneToMany(mappedBy = "vote")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "vote",fetch = FetchType.EAGER)
     private List<Answer> answers;
 
     public Vote() {}
