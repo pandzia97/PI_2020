@@ -22,6 +22,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { VoteComponent } from './vote/vote.component';
 import { AnswerComponent } from './answer/answer.component';
 import { AnswerCheckComponent } from './answer-check/answer-check.component';
+import { HashDisplayComponent } from './hash-display/hash-display.component';
 
 
 
@@ -45,7 +46,8 @@ import { AnswerCheckComponent } from './answer-check/answer-check.component';
     SurveyListElementComponent,
     VoteComponent,
     AnswerComponent,
-    AnswerCheckComponent
+    AnswerCheckComponent,
+    HashDisplayComponent
 
 
 

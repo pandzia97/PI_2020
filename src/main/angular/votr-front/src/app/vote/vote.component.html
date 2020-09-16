@@ -6,9 +6,10 @@
   <br>
   <hr>
 
-  <button (click)="sendVote()">Zapisz odpowiedzi</button>
+  <button *ngIf="vote.hashedIdentifier.length==0" (click)="sendVote()">Zapisz odpowiedzi</button>
 
 
 
+  <app-hash-display *ngIf="vote.hashedIdentifier.length!=0" [hash]="vote.hashedIdentifier"></app-hash-display>
 </div>
 </div>

@@ -19,11 +19,7 @@ export class ListaAnkietComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/surveys").subscribe(data=>{
-      console.log(data);
       this.surveys = data as Array<Survey>;
-      console.log(this.surveys);
     })
-
   }
-
 }

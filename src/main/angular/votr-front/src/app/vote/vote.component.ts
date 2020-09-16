@@ -21,17 +21,25 @@ export class VoteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params=>this.surveyId = params["id"]);
-    this.vote = new Vote();
-    this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/surveys/" + this.surveyId).subscribe(data=>{
-    this.vote.survey = data as Survey;
-      for(let question of this.vote.survey.questions) {
-        let answer = new Answer();
-        answer.question = question;
-        this.vote.answers.push(answer);
-      }
-    })
-
+    console.log("VOTE COMPONENT",this.route.routeConfig);
+    if (this.route.routeConfig.path.startsWith("glosuj")) {
+      this.route.params.subscribe(params => this.surveyId = params["id"]);
+      this.vote = new Vote();
+      this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/surveys/" + this.surveyId).subscribe(data => {
+        this.vote.survey = data as Survey;
+        for (let question of this.vote.survey.questions) {
+          let answer = new Answer();
+          answer.question = question;
+          this.vote.answers.push(answer);
+        }
+      })
+    } else if (this.route.routeConfig.path.startsWith("sprawdz")) {
+      this.route.params.subscribe(params => {
+        this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/votes/" + params["hash"]).subscribe(data => {
+          this.vote = data as Vote;
+        });
+      } );
+    }
   }
 
   sendVote() {
@@ -40,6 +48,7 @@ export class VoteComponent implements OnInit {
       headers : new HttpHeaders({ 'Content-Type': 'application/json' })}
   ).subscribe(data => {
       console.log("recevid data: " + JSON.stringify(data));
+      this.vote.hashedIdentifier = data["HASHED_IDENTIFIER"];
     });
   }
 }

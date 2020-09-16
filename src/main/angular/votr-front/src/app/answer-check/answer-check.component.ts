@@ -11,19 +11,20 @@ export class AnswerCheckComponent implements OnInit {
 
   token: String;
 
-
   constructor(private http:HttpClient, private router: Router) {
-
-
   }
 
   ngOnInit(): void {
   }
 
   search(query: string) {
-    this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/votes/" + this.token).subscribe(data=>{
-      this.router.navigate(["glosuj"]);
-    })
+    // this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/votes/" + this.token).subscribe(data=>{
+      // this.router.navigate(["sprawdz", this.token]);
+      // console.log(data);
+    // })
+    this.token = query;
+    this.router.navigate(["sprawdz", this.token]);
+
     //TODO zapytanie do survey voteendpoint
   }
 }
