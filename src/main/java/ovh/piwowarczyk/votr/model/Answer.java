@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
-import java.util.Map;
+
 @Entity
 @Table(name="answer")
 public class Answer {
@@ -12,16 +12,16 @@ public class Answer {
     @GeneratedValue
     private Long id;
 
-    @ManyToOne
-    //@JsonBackReference
+    @ManyToOne()
+    @JsonBackReference
     private Vote vote;
 
-    @ManyToOne
-    //@JsonManagedReference
+    @ManyToOne()
+    @JsonManagedReference
     private Question question;
 
-    @ManyToOne
-   //@JsonManagedReference
+    @ManyToOne()
+    @JsonManagedReference
     private Option option;
 
 

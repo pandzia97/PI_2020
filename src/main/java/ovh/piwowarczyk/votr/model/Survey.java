@@ -1,5 +1,6 @@
 package ovh.piwowarczyk.votr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -12,7 +13,9 @@ public class Survey {
     @GeneratedValue
     private long id;
 
+    //TODO usunięty z serializacji - brak autoryzacji w obecnej wersji
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private User author;
 
     private String name;

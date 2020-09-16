@@ -1,6 +1,5 @@
 package ovh.piwowarczyk.votr.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -14,14 +13,14 @@ public class Vote {
 
     @Id
     @GeneratedValue
-    //@JsonProperty("id")
+    @JsonProperty("id")
     private Long voteID;
     private String hashedIdentifier;
     @ManyToOne
-    //@JsonManagedReference
+    @JsonManagedReference
     private Survey survey;
     private Date date;
-    @OneToMany(mappedBy = "vote",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "vote")
     private List<Answer> answers;
 
     public Vote() {}
