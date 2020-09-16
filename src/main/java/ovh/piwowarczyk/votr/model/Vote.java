@@ -16,7 +16,7 @@ public class Vote {
     private Long voteID;
     private String hashedIdentifier;
     @ManyToOne
-    @JsonIgnore
+    @JsonManagedReference
     private Survey survey;
     private Date date;
     @OneToMany(mappedBy = "vote")
