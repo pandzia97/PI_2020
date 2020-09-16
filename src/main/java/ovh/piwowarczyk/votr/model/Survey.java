@@ -1,6 +1,5 @@
 package ovh.piwowarczyk.votr.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -21,10 +20,6 @@ public class Survey {
     @OneToMany(mappedBy = "survey", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @JsonManagedReference
     private List<Question> questions;
-
-    @OneToMany(mappedBy = "survey", fetch = FetchType.LAZY)
-    @JsonBackReference
-    private List<Vote> votes;
 
     private Boolean active;
 
@@ -62,14 +57,6 @@ public class Survey {
 
     public void setQuestions(List<Question> questions) {
         this.questions = questions;
-    }
-
-    public List<Vote> getVotes() {
-        return votes;
-    }
-
-    public void setVotes(List<Vote> votes) {
-        this.votes = votes;
     }
 
     public Boolean getActive() {
