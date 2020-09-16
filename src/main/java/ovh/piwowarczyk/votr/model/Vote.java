@@ -2,6 +2,7 @@ package ovh.piwowarczyk.votr.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,6 +14,7 @@ public class Vote {
 
     @Id
     @GeneratedValue
+    @JsonProperty("id")
     private Long voteID;
     private String hashedIdentifier;
     @ManyToOne

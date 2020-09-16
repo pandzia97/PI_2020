@@ -16,23 +16,31 @@ public class Option {
     @JsonBackReference
     private Question question;
 
-    private String answer;
+    private String value;
 
     public Option(){}
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getAnswer() {
-        return answer;
+    public Question getQuestion() {
+        return question;
     }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String answer) {
+        this.value = answer;
     }
 }

@@ -15,12 +15,15 @@ public class Answer {
     @ManyToOne
     @JsonBackReference
     private Vote vote;
+
     @ManyToOne
     @JsonManagedReference
     private Question question;
+
     @ManyToOne
     @JsonManagedReference
     private Option option;
+
 
     public Answer() {}
 
