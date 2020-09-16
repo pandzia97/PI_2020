@@ -7,4 +7,12 @@ export class Answer {
     vote: Vote;
     question: Question;
     option: Option;
+
+
+  constructor(id?: number, vote?: Vote, question?: Question, option?: Option) {
+    this.id = id;
+    this.vote = vote;
+    this.question = question;
+    this.option = option;
+  }
 }

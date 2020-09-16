@@ -1,12 +1,11 @@
 export class Option {
     id: number;
+    value: String;
 
-    answer: String;
 
-
-  constructor(id?: number, answer?: String) {
+  constructor(id?: number, value?: String) {
     this.id = id;
-    this.answer = answer ? answer : "Podaj odpowiedź";
+    this.value = value ? value : "Podaj odpowiedź";
 
   }
 }
