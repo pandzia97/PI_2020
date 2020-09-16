@@ -22,7 +22,7 @@ public class Vote {
     private Survey survey;
     private Date date;
     @OneToMany(mappedBy = "vote")
-    //@JsonManagedReference
+    @JsonManagedReference
     private List<Answer> answers;
 
     public Vote() {}
