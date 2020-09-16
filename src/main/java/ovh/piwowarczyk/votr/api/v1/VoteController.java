@@ -28,9 +28,9 @@ public class VoteController {
     @PostMapping
     @CrossOrigin
     public String addVote(@RequestBody Vote vote){
-        logger.debug("received Answer list size: " + vote.getAnswers().size());
+        logger.info("received Answer list size: " + vote.getAnswers().size());
         Vote addedVote = voteService.createNew(vote);
-        logger.debug("saved Answer list size: " + addedVote.getAnswers().size());
+        logger.info("saved Answer list size: " + addedVote.getAnswers().size());
         return "{\"HASHED_IDENTIFIER\": \"" + addedVote.getHashedIdentifier() + "\"}";
     }
 

@@ -3,6 +3,8 @@ package ovh.piwowarczyk.votr.services;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ovh.piwowarczyk.votr.model.User;
@@ -12,6 +14,7 @@ import java.util.List;
 
 @Service("HibernateUserService")
 public class HibernateUserService implements UserService {
+    Logger logger = LoggerFactory.getLogger(HibernateUserService.class);
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -26,6 +29,7 @@ public class HibernateUserService implements UserService {
 
             transaction.commit();
         }catch(Exception e) {
+            logger.debug(e.getMessage(), e);
             if (transaction!=null) {
                 transaction.rollback();
             }
@@ -98,6 +102,8 @@ public class HibernateUserService implements UserService {
             }
             transaction.commit();
         }catch(Exception e) {
+            logger.info(e.getMessage(), e);
+
             if (transaction!=null) {
                 transaction.rollback();
             }

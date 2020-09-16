@@ -3,15 +3,18 @@ package ovh.piwowarczyk.votr.services;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ovh.piwowarczyk.votr.model.Vote;
-import ovh.piwowarczyk.votr.utils.VoteHasher;
 
 import java.util.List;
 
 @Service("HibernateVoteController")
 public class HibernateVoteService implements VoteService {
+
+    Logger logger = LoggerFactory.getLogger(HibernateVoteService.class);
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -30,8 +33,10 @@ public class HibernateVoteService implements VoteService {
 
             transaction.commit();
         }catch (Exception e){
+            logger.info(e.getMessage(), e);
             if (transaction!=null) {
                 transaction.rollback();
+
             }
         }
 
