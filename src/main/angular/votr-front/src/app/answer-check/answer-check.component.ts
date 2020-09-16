@@ -12,7 +12,7 @@ export class AnswerCheckComponent implements OnInit {
   token: String;
 
 
-  constructor(private http:HttpClient, private router: Router, private storage: Storage) {
+  constructor(private http:HttpClient, private router: Router) {
 
 
   }
@@ -22,7 +22,6 @@ export class AnswerCheckComponent implements OnInit {
 
   search(query: string) {
     this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/votes/" + this.token).subscribe(data=>{
-      this.storage.storage = data;
       this.router.navigate(["glosuj"]);
     })
     //TODO zapytanie do survey voteendpoint

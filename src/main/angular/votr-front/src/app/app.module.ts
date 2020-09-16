@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { ListaAnkietComponent } from './lista-ankiet/lista-ankiet.component';
 import { RejestracjaComponent } from './rejestracja/rejestracja.component';
 import { SurveyComponent } from './survey/survey.component';
@@ -30,7 +29,6 @@ import { AnswerCheckComponent } from './answer-check/answer-check.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     ListaAnkietComponent,
     RejestracjaComponent,
     SurveyComponent,

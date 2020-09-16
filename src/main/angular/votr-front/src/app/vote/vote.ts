@@ -12,10 +12,9 @@ export class Vote {
     constructor(id?: number, survey?: Survey, hashedIdentifier?: String, date?: Date, answers?: Array<Answer>) {
         this.id = id;
         this.survey = survey;
-        this.hashedIdentifier = hashedIdentifier;
-        this.date = date;
+        this.hashedIdentifier = hashedIdentifier ? hashedIdentifier : "";
+        this.date = date ? date : new Date();
         this.answers = answers ? answers : [];
 
     }
-
 }

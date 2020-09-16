@@ -18,7 +18,7 @@ export class AnswerComponent implements OnInit {
   }
 
   updateAnswer() {
-    console.log(this.answer.option.answer);
+    console.log(this.answer.option.value);
 
   }
 }
