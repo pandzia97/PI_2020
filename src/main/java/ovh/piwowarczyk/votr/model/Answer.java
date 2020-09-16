@@ -13,15 +13,15 @@ public class Answer {
     private Long id;
 
     @ManyToOne
-    @JsonBackReference
+    //@JsonBackReference
     private Vote vote;
 
     @ManyToOne
-    @JsonManagedReference
+    //@JsonManagedReference
     private Question question;
 
     @ManyToOne
-    @JsonManagedReference
+   //@JsonManagedReference
     private Option option;
 
 

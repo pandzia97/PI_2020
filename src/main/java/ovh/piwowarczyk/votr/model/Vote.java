@@ -14,15 +14,15 @@ public class Vote {
 
     @Id
     @GeneratedValue
-    @JsonProperty("id")
+    //@JsonProperty("id")
     private Long voteID;
     private String hashedIdentifier;
     @ManyToOne
-    @JsonManagedReference
+    //@JsonManagedReference
     private Survey survey;
     private Date date;
     @OneToMany(mappedBy = "vote")
-    @JsonManagedReference
+    //@JsonManagedReference
     private List<Answer> answers;
 
     public Vote() {}
