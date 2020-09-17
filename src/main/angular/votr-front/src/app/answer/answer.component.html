@@ -1,0 +1,11 @@
+<div id="answer">
+
+  <h4>{{answer.question.question}}</h4>
+  <div id="options" *ngFor="let option of answer.question.options">
+    <input [disabled]="!isEdit" [(ngModel)]="answer.option" (change)="updateAnswer()" type="radio" id="{{option.id}}"
+           [value]="option" name="{{answer.question.id}}">
+    <label for="{{option.id}}">{{option.value}}</label>
+    <fa-icon *ngIf="!isEdit && option.id==answer.option.id " [icon]="faCheck"></fa-icon>
+
+  </div>
+</div>

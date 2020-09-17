@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mariadb://localhost:3306/prod</property>
+        <property name="connection.username">prod</property>
+        <property name="connection.password">12qwaszx</property>
+        <property name="show_sql">false</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+        <mapping class="ovh.piwowarczyk.votr.model.User" />
+        <mapping class="ovh.piwowarczyk.votr.model.Survey"/>
+        <mapping class="ovh.piwowarczyk.votr.model.Question"/>
+        <mapping class="ovh.piwowarczyk.votr.model.Option"/>
+        <mapping class="ovh.piwowarczyk.votr.model.Vote"/>
+        <mapping class="ovh.piwowarczyk.votr.model.Answer"/>
+    </session-factory>
+</hibernate-configuration>

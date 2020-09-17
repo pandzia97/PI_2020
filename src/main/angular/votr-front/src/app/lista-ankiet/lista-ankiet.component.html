@@ -1,0 +1,9 @@
+<div class="list">
+
+  <p>Lista dostępnych ankiet</p>
+
+  <div> <!-- opcja dla ankietowanego  --->
+    <app-survey-list-element *ngFor="let survey of surveys" [survey]="survey"> </app-survey-list-element>
+  </div>
+
+</div>

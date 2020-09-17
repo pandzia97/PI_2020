@@ -1,0 +1,64 @@
+<div class="header">
+
+  <div class="logo">
+    <img src="favicon.ico" style="float: left;"/>
+    <span style="color: #ffffff">Aplikacja do ankiet :)</span>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+<div class="nav">
+  <ol>
+    <li>
+      <a routerLink="/" routerLinkActive="active">Strona główna</a>
+    </li>
+    <li>
+      <a href="#">Ankiety</a>
+      <ul>
+        <li>
+          <a routerLink="/ankieta" routerLinkActive="active">Dodaj ankietę</a>
+        </li>
+        <li>
+          <a routerLink="/lista-ankiet" routerLinkActive="active">Sprawdź listę dostępnych ankiet</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Odpowiedzi</a>
+      <ul>
+        <li>
+          <a routerLink="/sprawdz" routerLinkActive="active">Sprawdź swoje odpowiedzi</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="/about" routerLinkActive="active">O autorach</a>
+    </li>
+  </ol>
+
+</div>
+
+<script src="jquery-1.11.3.min.js"></script>
+
+<script>
+
+  $(document).ready(function () {
+    var NavY = $('.nav').offset().top;
+
+    var stickyNav = function () {
+      var ScrollY = $(window).scrollTop();
+
+      if (ScrollY > NavY) {
+        $('.nav').addClass('sticky');
+      } else {
+        $('.nav').removeClass('sticky');
+      }
+    };
+
+    stickyNav();
+
+    $(window).scroll(function () {
+      stickyNav();
+    });
+  });
+
+</script>

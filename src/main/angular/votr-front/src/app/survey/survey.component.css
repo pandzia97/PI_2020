@@ -1,0 +1,51 @@
+#dodanie_ankiety {
+  border: 2px solid #000000;
+  border-radius: 5px 10px 5px 10px;
+  background-color: rgba(255, 255, 255, 0.57);
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 20px;
+}
+
+form {
+  margin: 0;
+}
+
+label {
+  display: block;
+  width: 260px;
+  padding: 10px 20px;
+  color: #000000;
+  font-size: 16px;
+}
+
+
+
+#lower {
+  background: rgba(99, 99, 99, 0);
+  width: 360px;
+  padding: 5px 20px;
+  margin-top: 20px;
+}
+
+#name:focus {
+  outline: 5px solid rgba(0, 102, 255, 0.53);
+}
+
+
+button {
+  width: 100%;
+  padding: 5px 2px;
+  border: 2px solid #000000;
+  color: #020202;
+  background: rgba(255, 255, 255, 0);
+  position: relative;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
