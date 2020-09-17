@@ -25,12 +25,11 @@ public class HibernateVoteService implements VoteService {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
-            Vote hashedVote;
 
 
             session.save(vote);
-            hashedVote = VoteHasher.hashVote(vote);
-            session.update(hashedVote);
+            vote.setHashedIdentifier(VoteHasher.hashVote(vote));
+            session.update(vote);
 
             transaction.commit();
         }catch (Exception e){
@@ -89,6 +88,7 @@ public class HibernateVoteService implements VoteService {
             List<Vote> voteList = session.createQuery(query, Vote.class).list();
             if(voteList.size()==1){
                 vote = voteList.get(0);
+
             }
             transaction.commit();
         }catch(Exception e) {
@@ -96,7 +96,11 @@ public class HibernateVoteService implements VoteService {
                 transaction.rollback();
             }
         }
-        return vote;
+
+        if(!vote.getHashedIdentifier().equals(VoteHasher.hashVote(vote))){
+            return new Vote();
+        }
+            return vote;
     }
 }
 

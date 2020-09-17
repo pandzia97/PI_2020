@@ -3,7 +3,9 @@ package ovh.piwowarczyk.votr.api.v1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import ovh.piwowarczyk.votr.model.Vote;
 import ovh.piwowarczyk.votr.services.VoteService;
 
@@ -38,6 +40,10 @@ public class VoteController {
     @GetMapping("{hash}")
     @CrossOrigin
     public Vote getVoteForHash(@PathVariable String hash){
-        return voteService.getVoteForHashedIdentifier(hash);
+        Vote vote = voteService.getVoteForHashedIdentifier(hash);
+        if(vote.getHashedIdentifier()==null || vote.getHashedIdentifier().isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Hash conflict found - POSSIBLE UNWANTED DATABASE MANIPULATION!");
+        }
+        return vote;
     }
 }

@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 
 public class VoteHasher {
 
-    public static Vote hashVote(Vote vote){
+    public static String hashVote(Vote vote){
 
         StringBuilder builder = new StringBuilder();
         builder.append(vote.getVoteID())
@@ -22,9 +22,8 @@ public class VoteHasher {
         String sha256hex = Hashing.sha256()
                 .hashString(builder.toString(), StandardCharsets.UTF_8)
                 .toString();
-        vote.setHashedIdentifier(sha256hex);
 
-        return vote;
+        return sha256hex;
     }
 
 }
