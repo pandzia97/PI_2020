@@ -2,6 +2,8 @@ package ovh.piwowarczyk.votr.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -21,6 +23,7 @@ public class Vote {
     private Date date;
     @OneToMany(mappedBy = "vote", cascade = CascadeType.ALL)
     @JsonManagedReference
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Answer> answers;
 
     public Vote() {}
