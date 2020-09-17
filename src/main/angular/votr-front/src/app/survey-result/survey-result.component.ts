@@ -45,8 +45,21 @@ export class SurveyResultComponent implements OnInit {
           }
         }
       }
-
+    this.surveyResult = this.parse();
     });
 
+  }
+  parse() : Map<String, Map<String, number>> {
+    let questions = new Map<String, Map<String, number>>();
+    this.surveyResult.forEach((value, key) => {
+      let parsedQuestion = JSON.parse(key as string);
+      let answers = new Map<String, number>();
+      value.forEach((value1, key1) => {
+        let parsedAnswer = JSON.parse(key1 as string);
+        answers.set(parsedAnswer.value, value1);
+      });
+      questions.set((parsedQuestion as Question).question, answers)
+    });
+    return questions;
   }
 }
