@@ -15,6 +15,7 @@ export class SurveyResultComponent implements OnInit {
   private votes: Array<Vote>;
   // public surveyResult: Map<Question, Map<Option, number>>;
   public surveyResult: Map<String, Map<String, number>>;
+  JSON = JSON;
 
   constructor(private http: HttpClient) {
 
