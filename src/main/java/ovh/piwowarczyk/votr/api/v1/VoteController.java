@@ -22,6 +22,7 @@ public class VoteController {
     @GetMapping("survey/{surveyId}")
     @CrossOrigin
     public List<Vote> getVotesForSurvey(@PathVariable Long surveyId){
+        logger.info("Searching for votes assigned to survey " + surveyId);
         return voteService.getVotesForSurveyId(surveyId);
     }
 
