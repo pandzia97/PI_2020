@@ -15,6 +15,7 @@ export class AnswerCheckComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.token = "";
   }
 
   search(query: string) {

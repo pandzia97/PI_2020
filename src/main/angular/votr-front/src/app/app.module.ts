@@ -23,6 +23,7 @@ import { VoteComponent } from './vote/vote.component';
 import { AnswerComponent } from './answer/answer.component';
 import { AnswerCheckComponent } from './answer-check/answer-check.component';
 import { HashDisplayComponent } from './hash-display/hash-display.component';
+import { SurveyResultComponent } from './survey-result/survey-result.component';
 
 
 
@@ -47,7 +48,8 @@ import { HashDisplayComponent } from './hash-display/hash-display.component';
     VoteComponent,
     AnswerComponent,
     AnswerCheckComponent,
-    HashDisplayComponent
+    HashDisplayComponent,
+    SurveyResultComponent
 
 
 

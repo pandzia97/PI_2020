@@ -9,7 +9,7 @@
 }
 
 button {
-  width: 70px;
+  width: 100%;
   padding: 5px 2px;
   border: 2px solid #000000;
   color: #020202;
@@ -21,3 +21,4 @@ button {
   border-radius: 5px;
   text-align: center;
 }
+
