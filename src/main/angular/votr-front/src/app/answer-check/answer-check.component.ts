@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Data, Router} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-answer-check',
@@ -20,7 +20,10 @@ export class AnswerCheckComponent implements OnInit {
 
   search(query: string) {
     this.token = query;
-    this.router.navigate(["sprawdz", this.token]);
+
+    if (query.length!=0) {
+      this.router.navigate(["sprawdz", this.token]);
+    }
 
   }
 }

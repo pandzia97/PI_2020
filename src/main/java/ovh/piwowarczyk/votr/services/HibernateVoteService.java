@@ -96,10 +96,10 @@ public class HibernateVoteService implements VoteService {
                 transaction.rollback();
             }
         }
-
-        if(!vote.getHashedIdentifier().equals(VoteHasher.hashVote(vote))){
-            return new Vote();
-        }
+//
+//        if(!vote.getHashedIdentifier().equals(VoteHasher.hashVote(vote))){
+//            return new Vote();
+//        }
             return vote;
     }
 }

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Vote} from "./vote";
 import {Survey} from "../survey/survey";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Answer} from "../answer/answer";
 
 @Component({
@@ -15,13 +15,15 @@ export class VoteComponent implements OnInit {
   vote: Vote;
   private surveyId: number;
   public isEdit: boolean;
+  isShowScore: boolean;
 
 
-  constructor(private http:HttpClient, private route:ActivatedRoute) {
+  constructor(private http:HttpClient, private route:ActivatedRoute, private router: Router) {
 
   }
 
   ngOnInit(): void {
+    this.isShowScore = false;
     if (this.route.routeConfig.path.startsWith("glosuj")) {
       this.isEdit = true;
       this.route.params.subscribe(params => this.surveyId = params["id"]);
@@ -39,6 +41,9 @@ export class VoteComponent implements OnInit {
       this.route.params.subscribe(params => {
         this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/votes/" + params["hash"]).subscribe(data => {
           this.vote = data as Vote;
+          if(!data){
+            this.router.navigate(['error']);
+          }
         });
       } );
     }
@@ -50,5 +55,9 @@ export class VoteComponent implements OnInit {
   ).subscribe(data => {
       this.vote.hashedIdentifier = data["HASHED_IDENTIFIER"];
     });
+  }
+
+  showScore() {
+    this.isShowScore = true;
   }
 }
