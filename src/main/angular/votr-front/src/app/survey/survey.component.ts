@@ -4,6 +4,7 @@ import { faCheck, faTimes, faEdit } from '@fortawesome/free-solid-svg-icons';
 import {Question} from "../question/question";
 
 import {HttpClient, HttpHandler, HttpHeaders} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -22,7 +23,7 @@ export class SurveyComponent implements OnInit {
 
 
 
-  constructor(  private http: HttpClient) {
+  constructor(  private http: HttpClient, private router: Router) {
 
 
     this.survey = new Survey();
@@ -68,8 +69,11 @@ export class SurveyComponent implements OnInit {
     this.http.post<Survey>("http://votr-test.piwowarczyk.ovh/api/v1/surveys",JSON.stringify(this.survey),{
       headers : new HttpHeaders({ 'Content-Type': 'application/json' })}
   ).subscribe(data => {
-      console.log(data);
+    this.router.navigate(["successful"]);
+
     });
+
+
 
   }
 
