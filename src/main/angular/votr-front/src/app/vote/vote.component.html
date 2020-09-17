@@ -1,18 +1,22 @@
 <div id="vote">
-<div id="vote2" *ngIf="vote.survey !=undefined">
+<div id="vote2" *ngIf="vote?.survey">
   <h3>{{vote.survey.name}}</h3>
 
-  <div *ngIf="vote.hashedIdentifier.length==0">
-    <app-answer *ngFor="let answer of vote.answers" [answer]="answer"></app-answer>
+  <div *ngIf="vote.hashedIdentifier.length!=0 && isEdit==false">
+    <app-answer *ngFor="let answer of vote.answers" [answer]="answer" [isEdit]="false"></app-answer>
+  </div>
+  <div *ngIf="vote.hashedIdentifier.length==0 && isEdit==true">
+    <app-answer *ngFor="let answer of vote.answers" [answer]="answer" [isEdit]="true"></app-answer>
   </div>
 
-  <app-survey-result *ngIf="vote.hashedIdentifier.length!=0" [surveyId]="vote.survey.id"></app-survey-result>
+
+  <app-survey-result *ngIf="vote.hashedIdentifier.length!=0 && isEdit==true" [surveyId]="vote.survey.id"></app-survey-result>
 
   <br>
   <hr>
   <button *ngIf="vote.hashedIdentifier.length==0" (click)="sendVote()">Zapisz odpowiedzi</button>
 
 
-  <app-hash-display *ngIf="vote.hashedIdentifier.length!=0" [hash]="vote.hashedIdentifier"></app-hash-display>
+  <app-hash-display *ngIf="vote.hashedIdentifier.length!=0 && isEdit==true" [hash]="vote.hashedIdentifier"></app-hash-display>
 </div>
 </div>

@@ -14,6 +14,7 @@ export class VoteComponent implements OnInit {
 
   vote: Vote;
   private surveyId: number;
+  public isEdit: boolean;
 
 
   constructor(private http:HttpClient, private route:ActivatedRoute) {
@@ -21,8 +22,8 @@ export class VoteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("VOTE COMPONENT",this.route.routeConfig);
     if (this.route.routeConfig.path.startsWith("glosuj")) {
+      this.isEdit = true;
       this.route.params.subscribe(params => this.surveyId = params["id"]);
       this.vote = new Vote();
       this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/surveys/" + this.surveyId).subscribe(data => {
@@ -34,6 +35,7 @@ export class VoteComponent implements OnInit {
         }
       })
     } else if (this.route.routeConfig.path.startsWith("sprawdz")) {
+      this.isEdit = false;
       this.route.params.subscribe(params => {
         this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/votes/" + params["hash"]).subscribe(data => {
           this.vote = data as Vote;
