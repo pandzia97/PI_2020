@@ -23,6 +23,7 @@ import { AnswerComponent } from './answer/answer.component';
 import { AnswerCheckComponent } from './answer-check/answer-check.component';
 import { HashDisplayComponent } from './hash-display/hash-display.component';
 import { SurveyResultComponent } from './survey-result/survey-result.component';
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 
 
@@ -59,7 +60,8 @@ import { SurveyResultComponent } from './survey-result/survey-result.component';
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
