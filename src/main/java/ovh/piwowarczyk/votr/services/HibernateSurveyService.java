@@ -11,6 +11,11 @@ import ovh.piwowarczyk.votr.model.Survey;
 
 import java.util.List;
 
+/**
+ * <p>Implementacja serwisu {@link SurveyService} dla frameworka Hibernate</p>
+ *
+ * @author jpiwowarczyk
+ */
 @Service("HibernateSurveyService")
 public class HibernateSurveyService implements SurveyService {
     Logger logger = LoggerFactory.getLogger(HibernateSurveyService.class);
@@ -19,6 +24,7 @@ public class HibernateSurveyService implements SurveyService {
     private SessionFactory sessionFactory;
 
 
+    /** {@inheritDoc} */
     @Override
     public void createNew(Survey survey) {
         Transaction transaction = null;
@@ -36,6 +42,7 @@ public class HibernateSurveyService implements SurveyService {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void updateExisting(Survey survey) {
         Transaction transaction = null;
@@ -52,6 +59,7 @@ public class HibernateSurveyService implements SurveyService {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<Survey> getAllSurveys() {
         List<Survey> surveyList = null;
@@ -70,6 +78,7 @@ public class HibernateSurveyService implements SurveyService {
         return surveyList;
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<Survey> getAllActiveSurveys() {
         List<Survey> surveyList = null;
@@ -88,6 +97,7 @@ public class HibernateSurveyService implements SurveyService {
         return surveyList;
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<Survey> getAllFinishedSurveys() {
         List<Survey> surveyList = null;
@@ -106,6 +116,7 @@ public class HibernateSurveyService implements SurveyService {
         return surveyList;
     }
 
+    /** {@inheritDoc} */
     @Override
     public Survey getSurveyForName(String name) {
         Survey survey = null;
@@ -127,6 +138,7 @@ public class HibernateSurveyService implements SurveyService {
         return survey;
     }
 
+    /** {@inheritDoc} */
     @Override
     public Survey getSurveyForId(long id) {
         Survey survey = null;

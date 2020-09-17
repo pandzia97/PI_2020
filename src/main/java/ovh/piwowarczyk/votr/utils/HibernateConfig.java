@@ -8,12 +8,22 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * <p>Klasa konfiguracyjna frameworku Hibernate</p>
+ *
+ * @author jpiwowarczyk
+ */
 @Configuration
 public class HibernateConfig {
 
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
+    /**
+     * <p>Metoda udostępniająca Fabrykę Sesji Hibernate jako HibernateBean</p>
+     *
+     * @return Fabryka sesji {@link SessionFactory}.
+     */
     @Bean
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
@@ -35,6 +45,9 @@ public class HibernateConfig {
         }
         return sessionFactory;
     }
+    /**
+     * <p>Metoda pomocnicza klasy konfiguracyjnej</p>
+     */
     public static void shutdown() {
         if (registry != null) {
             StandardServiceRegistryBuilder.destroy(registry);

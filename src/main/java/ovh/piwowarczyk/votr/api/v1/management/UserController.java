@@ -8,6 +8,11 @@ import ovh.piwowarczyk.votr.services.UserService;
 
 import java.util.List;
 
+/**
+ * <p>Kontroler REST dla obiektów klasy {@link User}</p>
+ *
+ * @author jpiwowarczyk
+ */
 @RestController
 @RequestMapping("api/v1/management/users")
 public class UserController {
@@ -16,17 +21,35 @@ public class UserController {
     @Qualifier("HibernateUserService")
     private UserService userService;
 
+    /**
+     * <p>Endpoint zwracający listę użytkowników</p>
+     *
+     * @return {@link List}
+     */
     @GetMapping
     public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
 
+    /**
+     * <p>Endpoint tworzący nowego użytkownika</p>
+     *
+     * @param user {@link User}
+     * @return {@link String}
+     */
     @PostMapping
     @CrossOrigin
     public String createUser(@RequestBody User user){
         userService.createNew(user);
         return "User " + user.getUserID() + " created successfully";
     }
+    /**
+     * <p>Endpoint wyszukujący użytkownika</p>
+     *
+     * @param userId {@link Long}
+     * @param user {@link User}
+     * @return {@link String}
+     */
     @PutMapping("{userId}")
     @CrossOrigin
     public String updateUser(@PathVariable Long userId, @RequestBody User user){

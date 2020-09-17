@@ -12,6 +12,11 @@ import ovh.piwowarczyk.votr.model.UserRole;
 
 import java.util.List;
 
+/**
+ * <p>Implementacja serwisu {@link UserService} dla frameworka Hibernate</p>
+ *
+ * @author jpiwowarczyk
+ */
 @Service("HibernateUserService")
 public class HibernateUserService implements UserService {
     Logger logger = LoggerFactory.getLogger(HibernateUserService.class);
@@ -19,6 +24,7 @@ public class HibernateUserService implements UserService {
     @Autowired
     private SessionFactory sessionFactory;
 
+    /** {@inheritDoc} */
     @Override
     public void createNew(User user) {
         Transaction transaction = null;
@@ -36,6 +42,7 @@ public class HibernateUserService implements UserService {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void updateExisting(User user) {
         Transaction transaction = null;
@@ -52,6 +59,7 @@ public class HibernateUserService implements UserService {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<User> getAllUsers() {
         List<User> userList = null;
@@ -70,6 +78,7 @@ public class HibernateUserService implements UserService {
         return userList;
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<User> getAllUsers(UserRole role) {
         List<User> userList = null;
@@ -88,6 +97,7 @@ public class HibernateUserService implements UserService {
         return userList;
     }
 
+    /** {@inheritDoc} */
     @Override
     public User getUserForLogin(String login) {
         User user = null;
@@ -111,6 +121,7 @@ public class HibernateUserService implements UserService {
         return user;
     }
 
+    /** {@inheritDoc} */
     @Override
     public User getUserForEmail(String email) {
         User user = null;
@@ -132,6 +143,7 @@ public class HibernateUserService implements UserService {
         return user;
     }
 
+    /** {@inheritDoc} */
     @Override
     public User getUserForId(int id) {
         User user = null;

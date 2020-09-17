@@ -12,6 +12,11 @@ import ovh.piwowarczyk.votr.utils.VoteHasher;
 
 import java.util.List;
 
+/**
+ * <p>Implementacja serwisu {@link VoteService} dla frameworka Hibernate</p>
+ *
+ * @author jpiwowarczyk
+ */
 @Service("HibernateVoteController")
 public class HibernateVoteService implements VoteService {
 
@@ -20,6 +25,7 @@ public class HibernateVoteService implements VoteService {
     @Autowired
     private SessionFactory sessionFactory;
 
+    /** {@inheritDoc} */
     @Override
     public Vote createNew(Vote vote) {
         Transaction transaction = null;
@@ -43,6 +49,7 @@ public class HibernateVoteService implements VoteService {
         return vote;
     }
 
+    /** {@inheritDoc} */
     @Override
     public void updateExisting(Vote vote) {
         Transaction transaction = null;
@@ -59,6 +66,7 @@ public class HibernateVoteService implements VoteService {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<Vote> getVotesForSurveyId(Long surveyId) {
         List<Vote> voteList = null;
@@ -77,6 +85,7 @@ public class HibernateVoteService implements VoteService {
         return voteList;
     }
 
+    /** {@inheritDoc} */
     @Override
     public Vote getVoteForHashedIdentifier(String hashedIdentifier) {
         Vote vote = null;

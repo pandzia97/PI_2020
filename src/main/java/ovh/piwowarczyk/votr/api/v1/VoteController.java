@@ -12,6 +12,11 @@ import ovh.piwowarczyk.votr.services.VoteService;
 import java.util.List;
 
 
+/**
+ * <p>Kontroler REST dla obiektów klasy {@link Vote}</p>
+ *
+ * @author jpiwowarczyk
+ */
 @RestController
 @RequestMapping("api/v1/votes")
 public class VoteController {
@@ -21,6 +26,12 @@ public class VoteController {
     @Autowired
     private VoteService voteService;
 
+    /**
+     * <p>Endpoint zwracający listę głosów dla danej ankiety</p>
+     *
+     * @param surveyId {@link Long}
+     * @return {@link List}
+     */
     @GetMapping("survey/{surveyId}")
     @CrossOrigin
     public List<Vote> getVotesForSurvey(@PathVariable Long surveyId){
@@ -28,6 +39,12 @@ public class VoteController {
         return voteService.getVotesForSurveyId(surveyId);
     }
 
+    /**
+     * <p>Endpoint zapisujący głosy w BD</p>
+     *
+     * @param vote {@link Vote}
+     * @return {@link String}
+     */
     @PostMapping(consumes = "application/json")
     @CrossOrigin
     public String addVote(@RequestBody Vote vote){
@@ -37,6 +54,12 @@ public class VoteController {
         return "{\"HASHED_IDENTIFIER\": \"" + addedVote.getHashedIdentifier() + "\"}";
     }
 
+    /**
+     * <p>Endpoint zwracający głos dla zadanego hasza</p>
+     *
+     * @param hash {@link String}
+     * @return {@link Vote}
+     */
     @GetMapping("{hash}")
     @CrossOrigin
     public Vote getVoteForHash(@PathVariable String hash){
