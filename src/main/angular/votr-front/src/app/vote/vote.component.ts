@@ -45,11 +45,9 @@ export class VoteComponent implements OnInit {
   }
 
   sendVote() {
-    console.log("Wyslany glos: " + JSON.stringify(this.vote));
     this.http.post("http://votr-test.piwowarczyk.ovh/api/v1/votes", JSON.stringify(this.vote),{
       headers : new HttpHeaders({ 'Content-Type': 'application/json' })}
   ).subscribe(data => {
-      console.log("recevid data: " + JSON.stringify(data));
       this.vote.hashedIdentifier = data["HASHED_IDENTIFIER"];
     });
   }

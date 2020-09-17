@@ -23,8 +23,6 @@ export class AnswerComponent implements OnInit {
   }
 
   updateAnswer() {
-    console.log(this.answer.option.value);
-
   }
 }
 

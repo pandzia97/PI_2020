@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaAnkietComponent } from './lista-ankiet/lista-ankiet.component';
-import { RejestracjaComponent } from './rejestracja/rejestracja.component';
 import { SurveyComponent } from './survey/survey.component';
 import { MenuComponent } from './menu/menu.component';
 import { HelloComponent } from './hello/hello.component';
@@ -32,7 +31,6 @@ import { SurveyResultComponent } from './survey-result/survey-result.component';
   declarations: [
     AppComponent,
     ListaAnkietComponent,
-    RejestracjaComponent,
     SurveyComponent,
     MenuComponent,
     HelloComponent,
@@ -50,8 +48,6 @@ import { SurveyResultComponent } from './survey-result/survey-result.component';
     AnswerCheckComponent,
     HashDisplayComponent,
     SurveyResultComponent
-
-
 
 
   ],

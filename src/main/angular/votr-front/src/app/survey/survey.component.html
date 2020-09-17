@@ -5,34 +5,32 @@
   <div *ngIf="editEnabled == true">
     <input #surveyName type="text" [value]="survey.name">
 
-    <fa-icon (click)="discard()"  [icon]="faTimes"></fa-icon>
-    <fa-icon (click)="accept(surveyName.value)"  [icon]="faCheck"></fa-icon>
+    <fa-icon (click)="discard()" [icon]="faTimes"></fa-icon>
+    <fa-icon (click)="accept(surveyName.value)" [icon]="faCheck"></fa-icon>
 
   </div>
-  <div *ngIf="editEnabled == false" >
+  <div *ngIf="editEnabled == false">
 
-    <div id="name">    <input #surveyName type="text" [value]="survey.name"disabled>
+    <div id="name"><input #surveyName type="text" [value]="survey.name" disabled>
       <fa-icon (click)="enableEdit()" [icon]="faEdit"></fa-icon>
     </div>
 
 
   </div>
   <app-question *ngFor="let question of survey.questions"
-                [question] = "question" ></app-question>
-
-
+                [question]="question"></app-question>
 
 
   <button (click)="addNewQuestion()">Dodaj pytanie</button>
 
 
-<div>
-  <hr>
-  <hr>
-  <button (click)="saveSurvey()">Dodaj ankietę </button>
-  <br>
-  <button (click)="resetSurvey()">Odrzuć ankietę</button>
+  <div>
+    <hr>
+    <hr>
+    <button (click)="saveSurvey()">Dodaj ankietę</button>
+    <br>
+    <button (click)="resetSurvey()">Odrzuć ankietę</button>
 
-</div>
+  </div>
 
 </div>

@@ -1,4 +1,3 @@
-
 import {Component, Input, OnInit} from '@angular/core';
 import {Survey} from "../survey/survey";
 import {Router} from "@angular/router";
@@ -14,7 +13,8 @@ export class SurveyListElementComponent implements OnInit {
   @Input('survey')
   survey: Survey;
 
-  constructor(private  router: Router) { }
+  constructor(private  router: Router) {
+  }
 
 
   ngOnInit(): void {

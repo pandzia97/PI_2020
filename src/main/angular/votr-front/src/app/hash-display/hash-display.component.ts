@@ -10,7 +10,8 @@ export class HashDisplayComponent implements OnInit {
   @Input("hash")
   hash: String;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
 

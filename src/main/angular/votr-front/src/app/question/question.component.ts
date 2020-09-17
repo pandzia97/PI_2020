@@ -6,7 +6,6 @@ import {faCheck} from "@fortawesome/free-solid-svg-icons/faCheck";
 import {faTimes} from "@fortawesome/free-solid-svg-icons/faTimes";
 
 
-
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
@@ -28,11 +27,11 @@ export class QuestionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  enableEdit(){
-      if (this.editEnabled == false) {
-        this.editEnabled = true;
+  enableEdit() {
+    if (this.editEnabled == false) {
+      this.editEnabled = true;
 
-      }
+    }
   }
 
   accept(newValue: String) {
@@ -49,14 +48,12 @@ export class QuestionComponent implements OnInit {
     if (this.editEnabled == true) {
       this.editEnabled = false;
     }
-
   }
 
   addNewAnswer() {
     let answer = new Option();
 
     this.question.options.push(answer);
-
 
   }
 }
