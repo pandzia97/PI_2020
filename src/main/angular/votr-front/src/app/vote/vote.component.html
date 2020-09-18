@@ -14,8 +14,10 @@
 
   <br>
   <hr>
+  <h5 *ngIf="vote.hashedIdentifier.length!=0 && isEdit==false">Twoje głosy zostały poprawnie zweryfikowane z podanym tokenem</h5>
   <button *ngIf="vote.hashedIdentifier.length==0 && !isShowScore" (click)="sendVote()">Zapisz odpowiedzi</button>
   <button *ngIf="vote.hashedIdentifier.length==0 && !isShowScore" (click)="showScore()">Pokaż wyniki</button>
+
 
   <app-hash-display *ngIf="vote.hashedIdentifier.length!=0 && isEdit==true" [hash]="vote.hashedIdentifier"></app-hash-display>
 </div>
