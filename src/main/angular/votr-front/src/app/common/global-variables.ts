@@ -1,3 +1,3 @@
 export class GlobalVariables {
-  public static apiUrl: string = "http://localhost:8080/api/v1";
+  public static apiUrl: string = "http://votr-test.piwowarczyk.ovh/api/v1";
 }
