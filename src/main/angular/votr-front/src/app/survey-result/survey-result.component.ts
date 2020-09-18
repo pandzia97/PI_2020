@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Question} from "../question/question";
-import {Option} from "../option/option";
 import {Vote} from "../vote/vote";
+import {GlobalVariables} from "../common/global-variables";
 
 @Component({
   selector: 'app-survey-result',
@@ -22,7 +22,7 @@ export class SurveyResultComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/votes/survey/" + this.surveyId).subscribe(data => {
+    this.http.get(`${GlobalVariables.apiUrl}/votes/survey/` + this.surveyId).subscribe(data => {
       this.votes = data as Array<Vote>;
       if (this.votes.length != 0) {
         for (let vote of this.votes) {

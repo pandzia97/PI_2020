@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-error',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorComponent implements OnInit {
 
-  constructor() { }
+  public message: String;
+
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    if(this.route.routeConfig.path.startsWith("hashError")){
+      this.message = "WYKRYTO NIEZGODNOŚĆ KLUCZY!!! Podejrzenie ingerencji w bazę danych!";
+    }else{
+      this.message="";
+    }
   }
 
 }

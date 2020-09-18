@@ -1,0 +1,8 @@
+.question {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+.answer {
+  font-weight: normal;
+}

@@ -4,6 +4,7 @@ import {Survey} from "../survey/survey";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Answer} from "../answer/answer";
+import {GlobalVariables} from "../common/global-variables";
 
 @Component({
   selector: 'app-vote',
@@ -28,7 +29,7 @@ export class VoteComponent implements OnInit {
       this.isEdit = true;
       this.route.params.subscribe(params => this.surveyId = params["id"]);
       this.vote = new Vote();
-      this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/surveys/" + this.surveyId).subscribe(data => {
+      this.http.get(`${GlobalVariables.apiUrl}/surveys/` + this.surveyId).subscribe(data => {
         this.vote.survey = data as Survey;
         for (let question of this.vote.survey.questions) {
           let answer = new Answer();
@@ -39,18 +40,17 @@ export class VoteComponent implements OnInit {
     } else if (this.route.routeConfig.path.startsWith("sprawdz")) {
       this.isEdit = false;
       this.route.params.subscribe(params => {
-        this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/votes/" + params["hash"]).subscribe(data => {
+        this.http.get(`${GlobalVariables.apiUrl}/votes/` + params["hash"]).subscribe(data => {
           this.vote = data as Vote;
-          if(!data){
-            this.router.navigate(['error']);
-          }
+        }, error => {
+          this.router.navigate(["hashError"]);
         });
       } );
     }
   }
 
   sendVote() {
-    this.http.post("http://votr-test.piwowarczyk.ovh/api/v1/votes", JSON.stringify(this.vote),{
+    this.http.post(`${GlobalVariables.apiUrl}/votes`, JSON.stringify(this.vote),{
       headers : new HttpHeaders({ 'Content-Type': 'application/json' })}
   ).subscribe(data => {
       this.vote.hashedIdentifier = data["HASHED_IDENTIFIER"];

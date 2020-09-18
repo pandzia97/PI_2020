@@ -1,9 +1,8 @@
 <p>Wyniki ankiety: </p>
 
 <div class="question" *ngFor="let question of surveyResult | keyvalue">
-  Question: {{question.key}}
+  {{question.key}}
   <div class="answer" *ngFor="let answer of question.value | keyvalue">
-    Answer: {{answer.key}}
-    Votes: {{answer.value}}
+    {{answer.key}} - {{answer.value}}
   </div>
 </div>
