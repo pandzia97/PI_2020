@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'glosuj/:id', component: VoteComponent},
   { path: 'sprawdz/:hash', component: VoteComponent},
   { path: 'sprawdz', component: AnswerCheckComponent},
+  { path: 'hashError', component: ErrorComponent},
 
   { path: '**', component: ErrorComponent}
 

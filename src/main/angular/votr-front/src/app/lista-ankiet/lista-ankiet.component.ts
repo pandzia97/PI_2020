@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Survey} from "../survey/survey";
 import {HttpClient} from "@angular/common/http";
+import {GlobalVariables} from "../common/global-variables";
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ListaAnkietComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get("http://votr-test.piwowarczyk.ovh/api/v1/surveys").subscribe(data => {
+    this.http.get(`${GlobalVariables.apiUrl}/surveys`).subscribe(data => {
       this.surveys = data as Array<Survey>;
     })
   }

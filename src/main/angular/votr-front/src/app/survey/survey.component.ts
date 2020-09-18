@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Survey} from "./survey";
-import {faCheck, faTimes, faEdit} from '@fortawesome/free-solid-svg-icons';
+import {faCheck, faEdit, faTimes} from '@fortawesome/free-solid-svg-icons';
 import {Question} from "../question/question";
-import {HttpClient, HttpHandler, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {GlobalVariables} from "../common/global-variables";
 
 
 @Component({
@@ -61,7 +62,7 @@ export class SurveyComponent implements OnInit {
   saveSurvey() {
 
 
-    this.http.post<Survey>("http://votr-test.piwowarczyk.ovh/api/v1/surveys", JSON.stringify(this.survey), {
+    this.http.post<Survey>(`${GlobalVariables.apiUrl}/surveys`, JSON.stringify(this.survey), {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
       }
     ).subscribe(data => {
