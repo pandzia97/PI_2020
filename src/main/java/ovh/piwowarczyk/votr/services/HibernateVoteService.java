@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author jpiwowarczyk
  */
-@Service("HibernateVoteController")
+@Service("HibernateVoteService")
 public class HibernateVoteService implements VoteService {
 
     Logger logger = LoggerFactory.getLogger(HibernateVoteService.class);
@@ -105,10 +105,13 @@ public class HibernateVoteService implements VoteService {
                 transaction.rollback();
             }
         }
-//
-//        if(!vote.getHashedIdentifier().equals(VoteHasher.hashVote(vote))){
-//            return new Vote();
-//        }
+        logger.info(vote.getHashedIdentifier());
+        logger.info(VoteHasher.hashVote(vote));
+        logger.info(VoteHasher.hashVote(vote));
+        logger.info("Hashes equal: " + vote.getHashedIdentifier().equals(VoteHasher.hashVote(vote)));
+        if(vote.getHashedIdentifier().equals(VoteHasher.hashVote(vote))==false){
+            return new Vote();
+        }
             return vote;
     }
 }
